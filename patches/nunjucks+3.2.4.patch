@@ -1,0 +1,15 @@
+diff --git a/node_modules/nunjucks/src/lexer.js b/node_modules/nunjucks/src/lexer.js
+index ca4454d..8fd61fd 100644
+--- a/node_modules/nunjucks/src/lexer.js
++++ b/node_modules/nunjucks/src/lexer.js
+@@ -4,8 +4,8 @@ var lib = require('./lib');
+ var whitespaceChars = " \n\t\r\xA0";
+ var delimChars = '()[]{}%*-+~/#,:|.<>=!';
+ var intChars = '0123456789';
+-var BLOCK_START = '{%';
+-var BLOCK_END = '%}';
++var BLOCK_START = '{$';
++var BLOCK_END = '$}';
+ var VARIABLE_START = '{{';
+ var VARIABLE_END = '}}';
+ var COMMENT_START = '{#';
