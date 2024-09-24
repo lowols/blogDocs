@@ -338,21 +338,21 @@ public class User {
 
 支持的其它属性如下：
 
-| **属性**           | **类型**     | **必填** | **默认值**               | **描述**                                                                                                                                                                                                                    |
-| ---------------- | ---------- | ------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| value            | String     | 否      | ""                    | 数据库字段名                                                                                                                                                                                                                    |
-| exist            | boolean    | 否      | true                  | 是否为数据库表字段                                                                                                                                                                                                                 |
-| condition        | String     | 否      | ""                    | 字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的 % s=#{% s}，[参考(opens new window)](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation_Img/SqlCondition.java) |
-| update           | String     | 否      | ""                    | 字段 update set 部分注入，例如：当在 version 字段上注解 update="%s+1" 表示更新时会 set version=version+1 （该属性优先级高于 el 属性）                                                                                                                        |
-| insertStrategy   | Enum       | 否      | FieldStrategy.DEFAULT | 举例：NOT_NULLinsert into table_a(<if test="columnProperty != null">column</if>) values (<if test="columnProperty != null">#{columnProperty}</if>)                                                                           |
-| updateStrategy   | Enum       | 否      | FieldStrategy.DEFAULT | 举例：IGNOREDupdate table_a set column=#{columnProperty}                                                                                                                                                                     |
-| whereStrategy    | Enum       | 否      | FieldStrategy.DEFAULT | 举例：NOT_EMPTYwhere <if test="columnProperty != null and columnProperty!=''">column=#{columnProperty}</if>                                                                                                                  |
-| fill             | Enum       | 否      | FieldFill.DEFAULT     | 字段自动填充策略                                                                                                                                                                                                                  |
-| select           | boolean    | 否      | true                  | 是否进行 select 查询                                                                                                                                                                                                            |
-| keepGlobalFormat | boolean    | 否      | false                 | 是否保持使用全局的 format 进行处理                                                                                                                                                                                                     |
-| jdbcType         | JdbcType   | 否      | JdbcType.UNDEFINED    | JDBC 类型 (该默认值不代表会按照该值生效)                                                                                                                                                                                                  |
-| typeHandler      | TypeHander | 否      |                       | 类型处理器 (该默认值不代表会按照该值生效)                                                                                                                                                                                                    |
-| numericScale     | String     | 否      | ""                    | 指定小数点后保留的位数                                                                                                                                                                                                               |
+| **属性**         | **类型**   | **必填** | **默认值**            | **描述**                                                     |
+| ---------------- | ---------- | -------- | --------------------- | ------------------------------------------------------------ |
+| value            | String     | 否       | ""                    | 数据库字段名                                                 |
+| exist            | boolean    | 否       | true                  | 是否为数据库表字段                                           |
+| condition        | String     | 否       | ""                    | 字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的` % s=#{% s}`，[参考(opens new window)](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation_Img/SqlCondition.java) |
+| update           | String     | 否       | ""                    | 字段 update set 部分注入，例如：当在 version 字段上注解 update="%s+1" 表示更新时会 set version=version+1 （该属性优先级高于 el 属性） |
+| insertStrategy   | Enum       | 否       | FieldStrategy.DEFAULT | 举例：NOT_NULLinsert into table_a(<if test="columnProperty != null">column</if>) values (<if test="columnProperty != null">#{columnProperty}</if>) |
+| updateStrategy   | Enum       | 否       | FieldStrategy.DEFAULT | 举例：IGNOREDupdate table_a set column=#{columnProperty}     |
+| whereStrategy    | Enum       | 否       | FieldStrategy.DEFAULT | 举例：NOT_EMPTYwhere <if test="columnProperty != null and columnProperty!=''">column=#{columnProperty}</if> |
+| fill             | Enum       | 否       | FieldFill.DEFAULT     | 字段自动填充策略                                             |
+| select           | boolean    | 否       | true                  | 是否进行 select 查询                                         |
+| keepGlobalFormat | boolean    | 否       | false                 | 是否保持使用全局的 format 进行处理                           |
+| jdbcType         | JdbcType   | 否       | JdbcType.UNDEFINED    | JDBC 类型 (该默认值不代表会按照该值生效)                     |
+| typeHandler      | TypeHander | 否       |                       | 类型处理器 (该默认值不代表会按照该值生效)                    |
+| numericScale     | String     | 否       | ""                    | 指定小数点后保留的位数                                       |
 
 ### **1.4.常见配置**
 

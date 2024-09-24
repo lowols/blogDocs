@@ -11,7 +11,7 @@ date: 2024-04-24 22:46:17
 
 
 
-{% markmap 250px %}
+{$ markmap 250px $}
 
 # 思维导图？
 - 使用现有的插件或组件？
@@ -29,11 +29,11 @@ date: 2024-04-24 22:46:17
 - 现已支持 markdown/链接/等特性
   - [links](https://zhangmaimai.com)
 
-{% endmarkmap %}
+{$ endmarkmap $}
 
 
 
-{% markmap 250px %}
+{$ markmap 250px $}
 
 
 
@@ -56,20 +56,19 @@ date: 2024-04-24 22:46:17
 
 
 
-{% endmarkmap %}
+{$ endmarkmap $}
 
 
 
 
-{% markmap 400px %}
+{$ markmap 400px $}
 - links
 - **inline** ~~text~~ *styles*
 - multiline
   text
 - `inline code`
 
-{% endmarkmap %}
-
+{$ endmarkmap $}
 
 2223
 
