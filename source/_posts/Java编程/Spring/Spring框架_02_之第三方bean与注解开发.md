@@ -33,7 +33,7 @@ date: 2024-05-13 12:13:39
 
 * 创建一个Maven项目
 
-  ![1629860338328](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629860338328.png)
+  ![1629860338328](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629860338328.png)
 
 * pom.xml添加依赖
 
@@ -83,11 +83,6 @@ date: 2024-05-13 12:13:39
 > 3.数据库连接需要基础的四要素`驱动`、`连接`、`用户名`和`密码`，【如何注入】到对应的bean中
 >
 > 4.从IOC容器中获取对应的bean对象，将其打印到控制台查看结果
-
-**思考:**
-
-* 第三方的类指的是什么?
-* 如何注入数据库连接四要素?
 
 #### 1.1.3 实现Druid管理
 
@@ -150,9 +145,9 @@ public class App {
 
 打印如下结果: 说明第三方bean对象已经被spring的IOC容器进行管理
 
-![1629887733081](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629887733081.png)
+![1629887733081](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629887733081.png)
 
-做完案例后，我们可以将刚才思考的两个问题答案说下:
+总结:
 
 - 第三方的类指的是什么?
 
@@ -192,7 +187,7 @@ pom.xml中添加依赖
 
 * 从mvn的仓库`https://mvnrepository.com/`中进行搜索
 
-  ![1629888540286](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629888540286.png)
+  ![1629888540286](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629888540286.png)
 
 ##### 步骤2:配置第三方bean
 
@@ -218,7 +213,7 @@ pom.xml中添加依赖
 
 程序会报错，错误如下
 
-![1629889170229](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629889170229.png)
+![1629889170229](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629889170229.png)
 
 报的错为==ClassNotFoundException==,翻译出来是`类没有发现的异常`，具体的类为`com.mysql.jdbc.Driver`。错误的原因是缺少mysql的驱动包。
 
@@ -234,7 +229,7 @@ pom.xml中添加依赖
 
 添加完mysql的驱动包以后，再次运行App,就可以打印出结果:
 
-![1629903845404](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629903845404.png)
+![1629903845404](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629903845404.png)
 
 **注意：**
 
@@ -411,7 +406,7 @@ public class App {
 }
 ```
 
-![1629975492444](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629975492444.png)
+![1629975492444](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629975492444.png)
 
 ##### 1.2.2.3 注意事项
 
@@ -448,7 +443,7 @@ public class App {
 
   3.运行后，在控制台打印的却不是`root666`，而是自己电脑的用户名
 
-  ![1629975934694](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629975934694.png)
+  ![1629975934694](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629975934694.png)
 
   4.出现问题的原因是`<context:property-placeholder/>`标签会加载系统的环境变量，而且环境变量的值会被优先加载，如何查看系统的环境变量?
 
@@ -537,7 +532,7 @@ public class App {
 
   * 如何开启`context`命名空间
 
-    ![1629980280952](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629980280952.png)
+    ![1629980280952](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629980280952.png)
 
   * 如何加载properties配置文件
 
@@ -553,7 +548,7 @@ public class App {
 
 ## 2，核心容器
 
-前面已经完成bean与依赖注入的相关知识学习，接下来我们主要学习的是IOC容器中的==核心容器==。
+前面已经完成bean与依赖注入的相关知识学习，接下来我们主要学习的是IOC容器中的**核心容器**。
 
 这里所说的核心容器，大家可以把它简单的理解为`ApplicationContext`，前面虽然已经用到过，但是并没有系统的学习，接下来咱们从以下几个问题入手来学习下容器的相关知识:
 
@@ -619,7 +614,7 @@ public class App {
 
 最终创建好的项目结构如下:
 
-![1629982672522](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629982672522.png)
+![1629982672522](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629982672522.png)
 
 ### 2.2 容器
 
@@ -631,7 +626,7 @@ public class App {
 ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 ```
 
-这种方式翻译为:==类路径下的XML配置文件==
+这种方式翻译为:**类路径下的XML配置文件**
 
 除了上面这种方式，Spring还提供了另外一种创建方式为:
 
@@ -639,19 +634,17 @@ ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.
 ApplicationContext ctx = new FileSystemXmlApplicationContext("applicationContext.xml");
 ```
 
-这种方式翻译为:==文件系统下的XML配置文件==
+这种方式翻译为:**文件系统下的XML配置文件**
 
 使用这种方式，运行，会出现如下错误:
 
-![1629983245121](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629983245121.png)
+![1629983245121](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629983245121.png)
 
 从错误信息中能发现，这种方式是从项目路径下开始查找`applicationContext.xml`配置文件的，所以需要将其修改为:
 
 ```java
 ApplicationContext ctx = new FileSystemXmlApplicationContext("D:\\workspace\\spring\\spring_10_container\\src\\main\\resources\\applicationContext.xml"); 
 ```
-
-**说明:**大家练习的时候，写自己的具体路径。
 
 这种方式虽能实现，但是当项目的位置发生变化后,代码也需要跟着改,耦合度较高,不推荐使用。
 
@@ -685,11 +678,11 @@ BookDao bookDao = ctx.getBean(BookDao.class);
 
 (1)在IDEA中双击`shift`,输入BeanFactory
 
-![1629985148294](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629985148294.png)
+![1629985148294](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629985148294.png)
 
 (2)点击进入BeanFactory类，ctrl+h,就能查看到如下结构的层次关系
 
-![1629984980781](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629984980781.png)
+![1629984980781](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629984980781.png)
 
 从图中可以看出，容器类也是从无到有根据需要一层层叠加上来的，大家重点理解下这种设计思想。
 
@@ -781,7 +774,7 @@ public class BookDaoImpl implements BookDao {
 
 #### 2.2.2 bean相关
 
-![1629986510487](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629986510487.png)
+![1629986510487](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629986510487.png)
 
 其实整个配置中最常用的就两个属性id和class。
 
@@ -789,11 +782,11 @@ public class BookDaoImpl implements BookDao {
 
 #### 2.2.3 依赖注入相关
 
-![1629986848563](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629986848563.png)
+![1629986848563](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629986848563.png)
 
 ## 3，IOC/DI注解开发
 
-Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来相对来说还是比较复杂的，复杂的地方在==配置文件==。
+Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来相对来说还是比较复杂的，复杂的地方在**配置文件**。
 
 前面咱们聊Spring的时候说过，Spring可以简化代码的开发，到现在并没有体会到。
 
@@ -876,7 +869,7 @@ Spring的IOC/DI对应的配置开发就已经讲解完成，但是使用起来�
 
 最终创建好的项目结构如下:
 
-![1629989221808](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629989221808.png)
+![1629989221808](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629989221808.png)
 
 ### 3.2 注解开发定义bean
 
@@ -903,11 +896,9 @@ public class BookDaoImpl implements BookDao {
 }
 ```
 
-==注意:@Component注解不可以添加在接口上，因为接口是无法创建对象的。==
-
 XML与注解配置的对应关系:
 
-![1629990315619](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1629990315619.png)
+![1629990315619](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1629990315619.png)
 
 #### 步骤3:配置Spring的注解包扫描
 
@@ -925,11 +916,6 @@ XML与注解配置的对应关系:
 
 **说明:**
 
-component-scan
-
-* component:组件,Spring将管理的bean视作自己的一个组件
-* scan:扫描
-
 base-package指定Spring框架扫描的包路径，它会扫描指定包及其子包中的所有类上的注解。
 
 * 包路径越多[如:com.itheima.dao.impl]，扫描的范围越小速度越快
@@ -940,7 +926,7 @@ base-package指定Spring框架扫描的包路径，它会扫描指定包及其�
 
 运行`App`类查看打印结果
 
-![1630027590558](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630027590558.png)
+![1630027590558](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630027590558.png)
 
 #### 步骤5:Service上添加注解
 
@@ -981,7 +967,7 @@ public class App {
 
 打印观察结果，两个bean对象都已经打印到控制台
 
-![1630027743910](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630027743910.png)
+![1630027743910](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630027743910.png)
 
 **说明:**
 
@@ -998,7 +984,7 @@ public class App {
 
 通过查看源码会发现:
 
-![1630028345074](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630028345074.png)
+![1630028345074](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630028345074.png)
 
 这三个注解和@Component注解的作用是一样的，为什么要衍生出这三个呢?
 
@@ -1020,6 +1006,10 @@ public class App {
 * Spring3.0开启了纯注解开发模式，使用Java类替代配置文件，开启了Spring快速开发赛道
 
 具体如何实现?
+
+> 可以联想一下其他的框架，webpack的入口文件的作用就和这里的配置类类似。
+>
+> 从一个入口文件，串联起所有的构建块。
 
 #### 3.2.1 思路分析
 
@@ -1079,13 +1069,13 @@ public class AppForAnnotation {
 
 运行AppForAnnotation,可以看到两个对象依然被获取成功
 
-![1630029110506](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630029110506.png)
+![1630029110506](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630029110506.png)
 
 至此，纯注解开发的方式就已经完成了，主要内容包括:
 
 * Java类替换Spring核心配置文件
 
-  ![1630029254372](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630029254372.png)
+  ![1630029254372](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630029254372.png)
 
 * @Configuration注解用于设定当前类为配置类
 
@@ -1193,13 +1183,13 @@ public class AppForAnnotation {
 
 最终创建好的项目结构如下:
 
-![1630031112993](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630031112993.png)
+![1630031112993](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630031112993.png)
 
 #### 3.3.2 Bean的作用范围
 
 (1)先运行App类,在控制台打印两个一摸一样的地址，说明默认情况下bean是单例
 
-![1630031192753](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630031192753.png)
+![1630031192753](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630031192753.png)
 
 (2)要想将BookDaoImpl变成非单例，只需要在其类上添加`@scope`注解
 
@@ -1217,7 +1207,7 @@ public class BookDaoImpl implements BookDao {
 
 再次执行App类，打印结果:
 
-![1630031808947](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630031808947.png)
+![1630031808947](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630031808947.png)
 
 ##### 知识点1：@Scope
 
@@ -1287,7 +1277,7 @@ public class App {
 
 (4)运行App,类查看打印结果，证明init和destroy方法都被执行了。
 
-![1630032385498](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630032385498.png)
+![1630032385498](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630032385498.png)
 
 **注意:**@PostConstruct和@PreDestroy注解如果找不到，需要导入下面的jar包
 
@@ -1321,7 +1311,7 @@ public class App {
 
 **小结**
 
-![1630033039358](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630033039358.png)
+![1630033039358](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630033039358.png)
 
 ### 3.4 注解开发依赖注入
 
@@ -1396,11 +1386,11 @@ Spring为了使用注解简化开发，并没有提供`构造函数注入`、`se
 
 最终创建好的项目结构如下:
 
-![1630033604129](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630033604129.png)
+![1630033604129](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630033604129.png)
 
 环境准备好后，运行后会发现有问题
 
-![1630033710052](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630033710052.png)
+![1630033710052](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630033710052.png)
 
 出现问题的原因是，在BookServiceImpl类中添加了BookDao的属性，并提供了setter方法，但是目前是没有提供配置注入BookDao的，所以bookDao对象为Null,调用其save方法就会报`控指针异常`。
 
@@ -1448,7 +1438,7 @@ public class BookDaoImpl2 implements BookDao {
 
 这个时候再次运行App，就会报错
 
-![1630034272959](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630034272959.png)
+![1630034272959](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630034272959.png)
 
 此时，按照类型注入就无法区分到底注入哪个对象，解决方案:`按照名称注入`
 
@@ -1477,7 +1467,7 @@ public class BookDaoImpl2 implements BookDao {
 
   * 分析下面这种情况是否能完成注入呢?
 
-    ![1630036236150](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630036236150.png)
+    ![1630036236150](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630036236150.png)
 
   * 不行，因为按照类型会找到多个bean对象，此时会按照`bookDao`名称去找，因为IOC容器只有名称叫`bookDao1`和`bookDao2`,所以找不到，会报`NoUniqueBeanDefinitionException`
 
@@ -1576,7 +1566,7 @@ public class BookDaoImpl implements BookDao {
 
 运行App类，查看运行结果，说明配置文件中的内容已经被加载到
 
-![1630084683663](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630084683663.png)
+![1630084683663](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630084683663.png)
 
 **注意:**
 
@@ -1697,7 +1687,7 @@ public class BookDaoImpl implements BookDao {
 
 最终创建好的项目结构如下:
 
-![1630122466404](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630122466404.png)
+![1630122466404](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630122466404.png)
 
 ### 4.2 注解开发管理第三方bean
 
@@ -1796,7 +1786,7 @@ public class JdbcConfig {
 
 #### 4.3.1 使用包扫描引入
 
-##### 步骤1:在Spring的配置类上添加包扫描
+**步骤1:在Spring的配置类上添加包扫描**
 
 ```java
 @Configuration
@@ -1806,7 +1796,7 @@ public class SpringConfig {
 }
 ```
 
-##### 步骤2:在JdbcConfig上添加配置注解
+**步骤2:在JdbcConfig上添加配置注解**
 
 JdbcConfig类要放入到`com.itheima.config`包下，需要被Spring的配置类扫描到即可
 
@@ -1825,7 +1815,7 @@ public class JdbcConfig {
 }
 ```
 
-##### 步骤3:运行程序
+**步骤3:运行程序**
 
 依然能获取到bean对象并打印控制台。
 
@@ -1833,15 +1823,15 @@ public class JdbcConfig {
 
 #### 4.3.2 使用`@Import`引入
 
-方案一实现起来有点小复杂，Spring早就想到了这一点，于是又给我们提供了第二种方案。
+比方案一更简洁。
 
-这种方案可以不用加`@Configuration`注解，但是必须在Spring配置类上使用`@Import`注解手动引入需要加载的配置类
+不用新加`@Configuration`注解，在Spring配置类上使用`@Import`注解手动引入需要加载的其他配置类
 
-##### 步骤1:去除JdbcConfig类上的注解
+**步骤1:去除JdbcConfig类上的注解**
 
 ```java
 public class JdbcConfig {
-	@Bean
+    @Bean
     public DataSource dataSource(){
         DruidDataSource ds = new DruidDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
@@ -1853,8 +1843,9 @@ public class JdbcConfig {
 }
 ```
 
-##### 步骤2:在Spring配置类中引入
+**步骤2:在Spring配置类中引入**
 
+````
 ```java
 @Configuration
 //@ComponentScan("com.itheima.config")
@@ -1863,14 +1854,14 @@ public class SpringConfig {
 	
 }
 ```
+````
+​       **注意:**
 
-**注意:**
-
-* 扫描注解可以移除
+- 扫描注解可以移除
 
 * @Import参数需要的是一个数组，可以引入多个配置类。
 
-* @Import注解在配置类中只能写一次，下面的方式是==不允许的==
+* @Import注解在配置类中只能写一次，下面的方式是**不允许的**
 
   ```java
   @Configuration
@@ -1878,15 +1869,16 @@ public class SpringConfig {
   @Import(JdbcConfig.class)
   @Import(Xxx.class)
   public class SpringConfig {
-  	
+  
   }
   ```
 
-##### 步骤3:运行程序
-
+**步骤3:运行程序**
 依然能获取到bean对象并打印控制台
 
-### 知识点1：@Bean
+#### 总结
+
+**知识点1：@Bean**
 
 | 名称 | @Bean                                  |
 | ---- | -------------------------------------- |
@@ -1895,7 +1887,7 @@ public class SpringConfig {
 | 作用 | 设置该方法的返回值作为spring管理的bean |
 | 属性 | value（默认）：定义bean的id            |
 
-### 知识点2：@Import
+**知识点2：@Import**
 
 | 名称 | @Import                                                      |
 | ---- | ------------------------------------------------------------ |
@@ -2041,11 +2033,11 @@ public DataSource dataSource(BookDao bookDao){
 }
 ```
 
-==引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型自动装配对象。==
+**引用类型注入只需要为bean定义方法设置形参即可，容器会根据类型自动装配对象。**
 
 ###### 步骤3:运行程序
 
-![1630125475609](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630125475609.png)
+![1630125475609](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630125475609.png)
 
 
 
@@ -2055,7 +2047,7 @@ public DataSource dataSource(BookDao bookDao){
 
 前面我们已经完成了XML配置和注解的开发实现，至于两者之间的差异，咱们放在一块去对比回顾下:
 
-![1630134786448](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630134786448.png)
+![1630134786448](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630134786448.png)
 
 ## 6，Spring整合
 
@@ -2262,7 +2254,7 @@ public class App {
 
 ##### 步骤9:运行程序
 
-![1630136904087](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630136904087.png)
+![1630136904087](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630136904087.png)
 
 #### 6.1.2 整合思路分析
 
@@ -2270,13 +2262,13 @@ Mybatis的基础环境我们已经准备好了，接下来就得分析下在上�
 
 * Mybatis程序核心对象分析
 
-  ![1630137189480](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630137189480.png)
+  ![1630137189480](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630137189480.png)
 
   从图中可以获取到，真正需要交给Spring管理的是==SqlSessionFactory==
 
 * 整合Mybatis，就是将Mybatis用到的内容交给Spring管理，分析下配置文件
 
-  ![1630137388717](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630137388717.png)
+  ![1630137388717](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630137388717.png)
 
   **说明:**
 
@@ -2395,14 +2387,14 @@ public class MybatisConfig {
 
 * 使用SqlSessionFactoryBean封装SqlSessionFactory需要的环境信息
 
-  ![1630138835057](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630138835057.png)
+  ![1630138835057](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630138835057.png)
 
   * SqlSessionFactoryBean是前面我们讲解FactoryBean的一个子类，在该类中将SqlSessionFactory的创建进行了封装，简化对象的创建，我们只需要将其需要的内容设置即可。
   * 方法中有一个参数为dataSource,当前Spring容器中已经创建了Druid数据源，类型刚好是DataSource类型，此时在初始化SqlSessionFactoryBean这个对象的时候，发现需要使用DataSource对象，而容器中刚好有这么一个对象，就自动加载了DruidDataSource对象。
 
 * 使用MapperScannerConfigurer加载Dao接口，创建代理对象保存到IOC容器中
 
-  ![1630138916939](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630138916939.png)
+  ![1630138916939](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630138916939.png)
 
   * 这个MapperScannerConfigurer对象也是MyBatis提供的专用于整合的jar包中的类，用来处理原始配置文件中的mappers相关配置，加载数据层的Mapper接口类
   * MapperScannerConfigurer有一个核心属性basePackage，就是用来设置所扫描的包路径
@@ -2438,7 +2430,7 @@ public class App2 {
 
 #### 步骤8:运行程序
 
-![1630139036627](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630139036627.png)
+![1630139036627](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630139036627.png)
 
 支持Spring与Mybatis的整合就已经完成了，其中主要用到的两个类分别是:
 
@@ -2462,7 +2454,7 @@ public class App2 {
 
 这块环境，大家可以直接使用Spring与Mybatis整合的环境即可。当然也可以重新创建一个，因为内容是一模一样，所以我们直接来看下项目结构即可:
 
-![1630139720273](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_02_之第三方bean与注解开发_Img/1630139720273.png)
+![1630139720273](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_02_之第三方bean与注解开发_Img/1630139720273.png)
 
 #### 6.3.2 整合Junit步骤
 

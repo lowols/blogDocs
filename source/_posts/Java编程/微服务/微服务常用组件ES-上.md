@@ -7,7 +7,7 @@ categories: 后端
 
 **微服务常用组件ES-上**
 
-B 站对应视频：
+B 站对应视频：https://www.bilibili.com/video/BV1S142197x7/
 
 黑马商城作为一个电商项目，商品的搜索肯定是访问频率最高的页面之一。目前搜索功能是基于数据库的模糊搜索来实现的，存在很多问题。
 
@@ -15,11 +15,11 @@ B 站对应视频：
 
 由于数据库模糊查询不走索引，在数据量较大的时候，查询性能很差。黑马商城的商品表中仅仅有不到 9 万条数据，基于数据库查询时，搜索接口的表现如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/LZ9bbYm6PokIrzxknsqcMV4qnfg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/LZ9bbYm6PokIrzxknsqcMV4qnfg.png)
 
 改为基于搜索引擎后，查询表现如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/Zle0b2b6goZF0lxqu00c19DWn6d.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/Zle0b2b6goZF0lxqu00c19DWn6d.png)
 
 需要注意的是，数据库模糊查询随着表数据量的增多，查询性能的下降会非常明显，而搜索引擎的性能则不会随着数据增多而下降太多。目前仅 10 万不到的数据量差距就如此明显，如果数据量达到百万、千万、甚至上亿级别，这个性能差距会非常夸张。
 
@@ -31,21 +31,27 @@ B 站对应视频：
 
 目前全球的搜索引擎技术排名如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/KepFbdFzOonosGxQ7yxcSgjznug.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/KepFbdFzOonosGxQ7yxcSgjznug.png)
 
 排名第一的就是我们今天要学习的 elasticsearch.
 
 elasticsearch 是一款非常强大的开源搜索引擎，支持的功能非常多，例如：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/TtGhbsvFjoFTyYxotidcTRHDnUb.png)
 **代码搜索**
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/DO6rbyIztom0SgxEBIpc0DGNnjf.png)
+
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/TtGhbsvFjoFTyYxotidcTRHDnUb.png)
+
 **商品搜索**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/Ngjqb46jyoAmUqxLd6acFepznXf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/DO6rbyIztom0SgxEBIpc0DGNnjf.png)
 **解决方案搜索**
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/CEejbZYEVoiwy2xZuxBcMkuhnah.png)
+
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/Ngjqb46jyoAmUqxLd6acFepznXf.png)
+
 **地图搜索**
+
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/CEejbZYEVoiwy2xZuxBcMkuhnah.png)
+
 
 通过今天的学习大家要达成下列学习目标：
 
@@ -71,7 +77,7 @@ Elasticsearch 是由 elastic 公司开发的一套搜索引擎技术，它是 el
 
 整套技术栈被称为 ELK，经常用来做日志收集、系统监控和状态分析等等：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/TPSkbktndoGn2cxEXiEcY63dnfi.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/TPSkbktndoGn2cxEXiEcY63dnfi.png)
 
 整套技术栈的核心就是用来**存储**、**搜索**、**计算**的 Elasticsearch，因此我们接下来学习的核心也是 Elasticsearch。
 
@@ -113,11 +119,11 @@ docker run -d \
 
 如果拉取镜像困难，可以直接导入课前资料提供的镜像 tar 包：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/AqOibER1hoV4RVxOLlNcKjp4nNe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/AqOibER1hoV4RVxOLlNcKjp4nNe.png)
 
 安装完成后，访问 9200 端口，即可看到响应的 Elasticsearch 服务的基本信息：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/IWXfbJM8koM95mx6vAXcPD6AnGd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/IWXfbJM8koM95mx6vAXcPD6AnGd.png)
 
 #### 1.1.2.安装 Kibana
 
@@ -134,19 +140,19 @@ kibana:7.12.1
 
 如果拉取镜像困难，可以直接导入课前资料提供的镜像 tar 包：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/UQQqbKhYNocp0uxuaqvcblOvndc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/UQQqbKhYNocp0uxuaqvcblOvndc.png)
 
 安装完成后，直接访问 5601 端口，即可看到控制台页面：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/VeiUbgztYou2ZFxdnqGcXw8Znpd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/VeiUbgztYou2ZFxdnqGcXw8Znpd.png)
 
 选择 `Explore on my own` 之后，进入主页面：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/Z5zIbLU4koplP3xF1WZc7oSenQe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/Z5zIbLU4koplP3xF1WZc7oSenQe.png)
 
 然后选中 `Dev tools`，进入开发工具页面：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/AXUPbdC1SocNanxDChlc4vh4nUb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/AXUPbdC1SocNanxDChlc4vh4nUb.png)
 
 ### 1.2.倒排索引
 
@@ -180,7 +186,7 @@ select * from tb_goods where title like '%手机%';
 
 那搜索的大概流程如图：
 
-![](微服务常用组件ES-上/PYCDbe5SnoUGiUxLTKLc08BKnDb.jpeg)
+![1729687407-be64fcbf71b154ef967e5ed6195160f3](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6ES-%E4%B8%8A_Img/img_7bcd0a1779000b5ec29233a338791f6c.jpg)
 
 说明：
 
@@ -233,7 +239,9 @@ select * from tb_goods where title like '%手机%';
 
 倒排索引的**搜索流程**如下（以搜索"华为手机"为例），如图：
 
-![](微服务常用组件ES-上/QFbAbDvVGow9EWxDad9cosYEn8f.jpeg)
+![image-20241023155942853](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6ES-%E4%B8%8A_Img/img_0028fcff8ebe678935758fde17bf883f.png)
+
+
 
 流程描述：
 
@@ -245,7 +253,7 @@ select * from tb_goods where title like '%手机%';
 
 4）拿着文档 `id` 到正向索引中查找具体文档即可（由于 `id` 也有索引，查询效率也很高）。
 
-虽然要先查询倒排索引，再查询倒排索引，但是无论是词条、还是文档 id 都建立了索引，查询速度非常快！无需全表扫描。
+虽然要先查询倒排索引，再查询正向索引，但是无论是词条、还是文档 id 都建立了索引，查询速度非常快！无需全表扫描。
 
 #### 1.2.3.正向和倒排
 
@@ -286,7 +294,7 @@ elasticsearch 中有很多独有的概念，与 mysql 中略有差别，但也�
 
 elasticsearch 是面向**文档（Document）**存储的，可以是数据库中的一条商品数据，一个订单信息。文档数据会被序列化为 `json` 格式后存储在 `elasticsearch` 中：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/BurZbt08qoYxjfxZJLscIh21nah.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/BurZbt08qoYxjfxZJLscIh21nah.png)
 
 ```json
 {
@@ -317,7 +325,7 @@ elasticsearch 是面向**文档（Document）**存储的，可以是数据库中
 
 随着业务发展，需要在 es 中存储的文档也会越来越多，比如有商品的文档、用户的文档、订单文档等等：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/UaC7bTxFSoH4P9xZyddcXU0Xnqb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/UaC7bTxFSoH4P9xZyddcXU0Xnqb.png)
 
 所有文档都散乱存放显然非常混乱，也不方便管理。
 
@@ -407,7 +415,7 @@ elasticsearch 是面向**文档（Document）**存储的，可以是数据库中
 
 如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/WJksbzTtCok6xxxjJIBcEd46nph.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/WJksbzTtCok6xxxjJIBcEd46nph.png)
 
 那是不是说，我们学习了 elasticsearch 就不再需要 mysql 了呢？
 
@@ -422,7 +430,7 @@ elasticsearch 是面向**文档（Document）**存储的，可以是数据库中
 - 对查询性能要求较高的搜索需求，使用 elasticsearch 实现
 - 两者再基于某种方式，实现数据的同步，保证一致性
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/ZTnGb1dMtobB3PxyD55cYly2nFb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/ZTnGb1dMtobB3PxyD55cYly2nFb.png)
 
 ### 1.4.IK 分词器
 
@@ -474,11 +482,11 @@ docker volume inspect es-plugins
 
 找到课前资料提供的 ik 分词器插件，课前资料提供了 `7.12.1` 版本的 ik 分词器压缩文件，你需要对其解压：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/OzZGb3WvIoolabxUAQCcouPsnid.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/OzZGb3WvIoolabxUAQCcouPsnid.png)
 
 然后上传至虚拟机的 `/var/lib/docker/volumes/es-plugins/_data` 这个目录：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/A8fgbyMFzohtr1xTap4cc0kQnx8.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/A8fgbyMFzohtr1xTap4cc0kQnx8.png)
 
 最后，重启 es 容器：
 
@@ -744,7 +752,7 @@ POST /_analyze
 
 1）打开 IK 分词器 config 目录：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/ReJubTDGjoIFVGxbVjlcQ8g2nyg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/ReJubTDGjoIFVGxbVjlcQ8g2nyg.png)
 
 注意，如果采用在线安装的通过，默认是没有 config 目录的，需要把课前资料提供的 ik 下的 config 上传至对应目录。
 
@@ -875,16 +883,16 @@ Mapping 是对索引库中文档的约束，常见的 Mapping 属性包括：
 
 对应的每个字段映射（Mapping）：
 
-| **字段名** |           | **字段类型** | **类型说明**       | **是否****参与搜索** | **是否****参与分词** | **分词器** |
-| ---------- | --------- | ------------ | ------------------ | -------------------- | -------------------- | ---------- |
-| age        |           | `integer`    | 整数               | - [x]                | - [ ]                | ——         |
-| weight     |           | `float`      | 浮点数             | - [x]                | - [ ]                | ——         |
-| isMarried  |           | `boolean`    | 布尔               | - [x]                | - [ ]                | ——         |
-| info       |           | `text`       | 字符串，但需要分词 | - [x]                | - [x]                | IK         |
-| email      |           | `keyword`    | 字符串，但是不分词 | - [ ]                | - [ ]                | ——         |
-| score      |           | `float`      | 只看数组中元素类型 | - [x]                | - [ ]                | ——         |
-| name       | firstName | `keyword`    | 字符串，但是不分词 | - [x]                | - [ ]                | ——         |
-|            | lastName  | `keyword`    | 字符串，但是不分词 | - [x]                | - [ ]                | ——         |
+| **字段名** |           | **字段类型** | **类型说明**       | **是否参与搜索** | **是否参与分词** | **分词器** |
+| ---------- | --------- | ------------ | ------------------ | ---------------- | ---------------- | ---------- |
+| age        |           | `integer`    | 整数               | - [x]            | - [ ]            | ——         |
+| weight     |           | `float`      | 浮点数             | - [x]            | - [ ]            | ——         |
+| isMarried  |           | `boolean`    | 布尔               | - [x]            | - [ ]            | ——         |
+| info       |           | `text`       | 字符串，需要分词   | - [x]            | - [x]            | IK         |
+| email      |           | `keyword`    | 字符串，不需要分词 | - [ ]            | - [ ]            | ——         |
+| score      |           | `float`      | 只看数组中元素类型 | - [x]            | - [ ]            | ——         |
+| name       | firstName | `keyword`    | 字符串，不需要分词 | - [x]            | - [ ]            | ——         |
+|            | lastName  | `keyword`    | 字符串，不需要分词 | - [x]            | - [ ]            | ——         |
 
 ### 2.2.索引库的 CRUD
 
@@ -1076,7 +1084,7 @@ POST /heima/_doc/1
 
 **响应：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/MuaRbZh0ooPlXdxQ9DdcEgOPn6d.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/MuaRbZh0ooPlXdxQ9DdcEgOPn6d.png)
 
 ### 3.2.查询文档
 
@@ -1096,7 +1104,7 @@ GET /heima/_doc/1
 
 **查看结果：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/MPjabItRKo14qaxGkLTcZyVznAd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/MPjabItRKo14qaxGkLTcZyVznAd.png)
 
 ### 3.3.删除文档
 
@@ -1116,7 +1124,7 @@ DELETE /heima/_doc/1
 
 **结果：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/H2zYbHVTFol0jWxFohOcZdWbnnh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/H2zYbHVTFol0jWxFohOcZdWbnnh.png)
 
 ### 3.4.修改文档
 
@@ -1161,11 +1169,11 @@ PUT /heima/_doc/1
 
 由于 `id` 为 `1` 的文档已经被删除，所以第一次执行时，得到的反馈是 `created`：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/W9uvbn4KyoKuL8xnIWocxMUqnnd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/W9uvbn4KyoKuL8xnIWocxMUqnnd.png)
 
 所以如果执行第 2 次时，得到的反馈则是 `updated`：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/WgoBbqTxloZJKyxYzgFcy4dYnTc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/WgoBbqTxloZJKyxYzgFcy4dYnTc.png)
 
 #### 3.4.2.局部修改
 
@@ -1195,7 +1203,7 @@ POST /heima/_update/1
 
 **执行结果**：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/WRKaboLO8oKfIDxA5tpcOYXMnTc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/WRKaboLO8oKfIDxA5tpcOYXMnTc.png)
 
 ### 3.5.批处理
 
@@ -1269,11 +1277,11 @@ ES 官方提供了各种不同语言的客户端，用来操作 ES。这些客�
 
 由于 ES 目前最新版本是 8.8，提供了全新版本的客户端，老版本的客户端已经被标记为过时。而我们采用的是 7.12 版本，因此只能使用老版本客户端：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/SEwPbjRjUowUxtxhx9KczlnlnZe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/SEwPbjRjUowUxtxhx9KczlnlnZe.png)
 
 然后选择 7.12 版本，HighLevelRestClient 版本：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/Hec1bwCnPoHU2axtOAFcefhvnHe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/Hec1bwCnPoHU2axtOAFcefhvnHe.png)
 
 ### 4.1.初始化 RestClient
 
@@ -1355,7 +1363,7 @@ public class IndexTest {
 
 搜索页面的效果如图所示：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/MAhTbzSuOohtFQxIjcKcqaUInZf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/MAhTbzSuOohtFQxIjcKcqaUInZf.png)
 
 实现搜索功能需要的字段包括三大部分：
 
@@ -1381,23 +1389,23 @@ public class IndexTest {
 
 对应的商品表结构如下，索引库无关字段已经划掉：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/Q8AkbdspSoKBWmxztmucTOzJnrf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/Q8AkbdspSoKBWmxztmucTOzJnrf.png)
 
 结合数据库表结构，以上字段对应的 mapping 映射属性如下：
 
-| **字段名**   |      | **字段类型** | **类型说明**           | **是否****参与搜索** | **是否****参与分词** | **分词器** |
-| ------------ | ---- | ------------ | ---------------------- | -------------------- | -------------------- | ---------- |
-| id           |      | `long`       | 长整数                 | - [x]                | - [ ]                | ——         |
-| name         |      | `text`       | 字符串，参与分词搜索   | - [x]                | - [x]                | IK         |
-| price        |      | `integer`    | 以分为单位，所以是整数 | - [x]                | - [ ]                | ——         |
-| stock        |      | `integer`    | 字符串，但需要分词     | - [x]                | - [ ]                | ——         |
-| image        |      | `keyword`    | 字符串，但是不分词     | - [ ]                | - [ ]                | ——         |
-| category     |      | `keyword`    | 字符串，但是不分词     | - [x]                | - [ ]                | ——         |
-| brand        |      | `keyword`    | 字符串，但是不分词     | - [x]                | - [ ]                | ——         |
-| sold         |      | `integer`    | 销量，整数             | - [x]                | - [ ]                | ——         |
-| commentCount |      | `integer`    | 评价，整数             | - [ ]                | - [ ]                | ——         |
-| isAD         |      | `boolean`    | 布尔类型               | - [x]                | - [ ]                | ——         |
-| updateTime   |      | `Date`       | 更新时间               | - [x]                | - [ ]                | ——         |
+| **字段名**   |      | **字段类型** | **类型说明**           | **是否参与搜索** | **是否参与分词** | **分词器** |
+| ------------ | ---- | ------------ | ---------------------- | ---------------- | ---------------- | ---------- |
+| id           |      | `long`       | 长整数                 | - [x]            | - [ ]            | ——         |
+| name         |      | `text`       | 字符串，参与分词搜索   | - [x]            | - [x]            | IK         |
+| price        |      | `integer`    | 以分为单位，所以是整数 | - [x]            | - [ ]            | ——         |
+| stock        |      | `integer`    | 字符串，但需要分词     | - [x]            | - [ ]            | ——         |
+| image        |      | `keyword`    | 字符串，但是不分词     | - [ ]            | - [ ]            | ——         |
+| category     |      | `keyword`    | 字符串，但是不分词     | - [x]            | - [ ]            | ——         |
+| brand        |      | `keyword`    | 字符串，但是不分词     | - [x]            | - [ ]            | ——         |
+| sold         |      | `integer`    | 销量，整数             | - [x]            | - [ ]            | ——         |
+| commentCount |      | `integer`    | 评价，整数             | - [ ]            | - [ ]            | ——         |
+| isAD         |      | `boolean`    | 布尔类型               | - [x]            | - [ ]            | ——         |
+| updateTime   |      | `Date`       | 更新时间               | - [x]            | - [ ]            | ——         |
 
 因此，最终我们的索引库文档结构应该是这样：
 
@@ -1451,16 +1459,14 @@ PUT /items
 
 创建索引库的 API 如下：
 
-![](微服务常用组件ES-上/LXD6brggXoeg3WxW5ztc6IBrnSe.jpeg)
+![1729687218-6453d529d8dfc75d1149c0318757a125](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6ES-%E4%B8%8A_Img/img_871ddd7c125733b2a299534d273745b8.jpg)
 
 代码分为三步：
 
 - 1）创建 Request 对象。
-
-  - 因为是创建索引库的操作，因此 Request 是 `CreateIndexRequest`。
+- 因为是创建索引库的操作，因此 Request 是 `CreateIndexRequest`。
 - 2）添加请求参数
-
-  - 其实就是 Json 格式的 Mapping 映射参数。因为 json 字符串很长，这里是定义了静态字符串常量 `MAPPING_TEMPLATE`，让代码看起来更加优雅。
+- 其实就是 Json 格式的 Mapping 映射参数。因为 json 字符串很长，这里是定义了静态字符串常量 `MAPPING_TEMPLATE`，让代码看起来更加优雅。
 - 3）发送请求
 
   - `client.indices()` 方法的返回值是 `IndicesClient` 类型，封装了所有与索引库操作有关的方法。例如创建索引、删除索引、判断索引是否存在等
@@ -1701,7 +1707,7 @@ POST /{索引库名}/_doc/1
 
 对应的 JavaAPI 如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/NpdLbaq5zoKcIhxdmmPccAuPnWg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/NpdLbaq5zoKcIhxdmmPccAuPnWg.png)
 
 可以看到与索引库操作的 API 非常类似，同样是三步走：
 
@@ -1769,7 +1775,7 @@ GET /{索引库名}/_doc/{id}
 
 不过查询的目的是得到结果，解析为 ItemDTO，还要再加一步对结果的解析。示例代码如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/EkqjbfS1JocZSfxG8excksdqnYb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/EkqjbfS1JocZSfxG8excksdqnYb.png)
 
 可以看到，响应结果是一个 JSON，其中文档放在一个 `_source` 属性中，因此解析就是拿到 `_source`，反序列化为 Java 对象即可。
 
@@ -1806,7 +1812,7 @@ void testGetDocumentById() throws IOException {
 DELETE /hotel/_doc/{id}
 ```
 
-与查询相比，仅仅是请求方式从 `DELETE` 变成 `GET`，可以想象 Java 代码应该依然是 2 步走：
+与查询相比，仅仅是请求方式从 `GET` 变成 `DELETE`，可以想象 Java 代码应该依然是 2 步走：
 
 - 1）准备 Request 对象，因为是删除，这次是 `DeleteRequest` 对象。要指定索引库名和 id
 - 2）~~准备参数，无参，直接省略~~
@@ -1854,7 +1860,7 @@ POST /{索引库名}/_update/{id}
 
 代码示例如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/O9bgbYBPooOpcmxhFk0c9XP2n7f.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/O9bgbYBPooOpcmxhFk0c9XP2n7f.png)
 
 与之前类似，也是三步走：
 
@@ -1914,7 +1920,7 @@ void testUpdateDocument() throws IOException {
 
 因此 `BulkRequest` 中提供了 `add` 方法，用以添加其它 CRUD 的请求：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-上_Img/OMpfbCns7oWY30xQfdmc07kon1c.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-上_Img/OMpfbCns7oWY30xQfdmc07kon1c.png)
 
 可以看到，能添加的请求有：
 

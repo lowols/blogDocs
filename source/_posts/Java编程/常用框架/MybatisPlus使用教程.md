@@ -32,27 +32,27 @@ tags: 数据库
 
 复制课前资料提供好的一个项目到你的工作空间（不要包含空格和特殊字符）：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Ne43bMnAUo6HzIxgTkbcDbalnRb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Ne43bMnAUo6HzIxgTkbcDbalnRb.png)
 
 然后用你的 IDEA 工具打开，项目结构如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Z8NJbN1Jyo1jxKxGloNcwGRGnNf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Z8NJbN1Jyo1jxKxGloNcwGRGnNf.png)
 
 注意配置一下项目的 JDK 版本为 JDK11。首先点击项目结构设置：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/MuvfbJBRpoZBlyxfKwxcKt4knJh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/MuvfbJBRpoZBlyxfKwxcKt4knJh.png)
 
 在弹窗中配置 JDK：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/LEQmbtQTxoK4zWxH4rEcEwWHnqh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/LEQmbtQTxoK4zWxH4rEcEwWHnqh.png)
 
 接下来，要导入两张表，在课前资料中已经提供了 SQL 文件：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Y3o7bPgG8oFMBkx2UnVcefoenSd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Y3o7bPgG8oFMBkx2UnVcefoenSd.png)
 
 对应的数据库表结构如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/BnnSbGBmvoK4y0xHCrac4jQcnzd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/BnnSbGBmvoK4y0xHCrac4jQcnzd.png)
 
 最后，在 `application.yaml` 中修改 jdbc 参数为你自己的数据库参数：
 
@@ -121,12 +121,12 @@ MybatisPlus 提供了 starter，实现了自动 Mybatis 以及 MybatisPlus 的�
 
 为了简化单表 CRUD，MybatisPlus 提供了一个基础的 `BaseMapper` 接口，其中已经实现了单表的 CRUD：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/KFYvbXw7foPf3Lxw5Cjcdm7ontb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/KFYvbXw7foPf3Lxw5Cjcdm7ontb.png)
 
 因此我们自定义的 Mapper 只要实现了这个 `BaseMapper`，就无需自己实现单表 CRUD 了。
 修改 mp-demo 中的 `com.itheima.mp.mapper` 包下的 `UserMapper` 接口，让其继承 `BaseMapper`：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/C2C4bNCoronm1PxiD0KcF67Mnlc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/C2C4bNCoronm1PxiD0KcF67Mnlc.png)
 
 代码如下：
 
@@ -222,7 +222,7 @@ MybatisPlus 如何知道我们要查询的是哪张表？表中有哪些字段�
 
 大家回忆一下，UserMapper 在继承 BaseMapper 的时候指定了一个泛型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/SSzobsKW1o52JxxZTZjc2eN9nhe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/SSzobsKW1o52JxxZTZjc2eN9nhe.png)
 
 泛型中的 User 就是与数据库对应的 PO.
 
@@ -342,7 +342,7 @@ public class User {
 | ---------------- | ---------- | -------- | --------------------- | ------------------------------------------------------------ |
 | value            | String     | 否       | ""                    | 数据库字段名                                                 |
 | exist            | boolean    | 否       | true                  | 是否为数据库表字段                                           |
-| condition        | String     | 否       | ""                    | 字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的` % s=#{% s}`，[参考(opens new window)](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation_Img/SqlCondition.java) |
+| condition        | String     | 否       | ""                    | 字段 where 实体查询比较条件，有值设置则按设置的值为准，没有则为默认全局的` % s=#{% s}`，[参考(opens new window)](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation_Img/SqlCondition.java) |
 | update           | String     | 否       | ""                    | 字段 update set 部分注入，例如：当在 version 字段上注解 update="%s+1" 表示更新时会 set version=version+1 （该属性优先级高于 el 属性） |
 | insertStrategy   | Enum       | 否       | FieldStrategy.DEFAULT | 举例：NOT_NULLinsert into table_a(<if test="columnProperty != null">column</if>) values (<if test="columnProperty != null">#{columnProperty}</if>) |
 | updateStrategy   | Enum       | 否       | FieldStrategy.DEFAULT | 举例：IGNOREDupdate table_a set column=#{columnProperty}     |
@@ -382,7 +382,7 @@ mybatis-plus:
 
 例如，我们新建一个 `UserMapper.xml` 文件：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Fxh4bAAVKotirgxkn15cU1HWnDh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Fxh4bAAVKotirgxkn15cU1HWnDh.png)
 
 然后在其中定义一个方法：
 
@@ -415,23 +415,23 @@ void testQuery() {
 
 除了新增以外，修改、删除、查询的 SQL 语句都需要指定 where 条件。因此 BaseMapper 中提供的相关方法除了以 `id` 作为 `where` 条件以外，还支持更加复杂的 `where` 条件。
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/AySPbBUUSonpkzxcLzHcKNXpnUc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/AySPbBUUSonpkzxcLzHcKNXpnUc.png)
 
 参数中的 `Wrapper` 就是条件构造的抽象类，其下有很多默认实现，继承关系如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Z1TSbFRMno6VijxCPCncz2gDn3e.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Z1TSbFRMno6VijxCPCncz2gDn3e.png)
 
 `Wrapper` 的子类 `AbstractWrapper` 提供了 where 中包含的所有条件构造方法：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/EyYybsfpAoAZVqxWjybcWK3enaf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/EyYybsfpAoAZVqxWjybcWK3enaf.png)
 
 而 QueryWrapper 在 AbstractWrapper 的基础上拓展了一个 select 方法，允许指定查询字段：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/EUsRbphDPo2M53xZ0kHcB1hEnjh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/EUsRbphDPo2M53xZ0kHcB1hEnjh.png)
 
 而 UpdateWrapper 在 AbstractWrapper 的基础上拓展了一个 set 方法，允许指定 SQL 中的 SET 部分：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/L6UEbDgUyoDxnVxQovIciba3ndb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/L6UEbDgUyoDxnVxQovIciba3ndb.png)
 
 接下来，我们就来看看如何利用 `Wrapper` 实现复杂查询。
 
@@ -527,7 +527,7 @@ void testLambdaQueryWrapper() {
 
 在演示 UpdateWrapper 的案例中，我们在代码中编写了更新的 SQL 语句：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/YDypbDjXworWFexxEGXcmzVonCe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/YDypbDjXworWFexxEGXcmzVonCe.png)
 
 这种写法在某些企业也是不允许的，因为 SQL 语句最好都维护在持久层，而不是业务层。就当前案例来说，由于条件是 in 语句，只能将 SQL 写在 Mapper.xml 文件，利用 foreach 来生成动态 SQL。
 这实在是太麻烦了。假如查询条件更复杂，动态 SQL 的编写也会更加复杂。
@@ -642,7 +642,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 我们先俩看下基本的 CRUD 接口。
 **新增**：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/XbiKbBgB1oY6hDxWvBVcpX9lnFh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/XbiKbBgB1oY6hDxWvBVcpX9lnFh.png)
 
 - `save` 是新增单个元素
 - `saveBatch` 是批量新增
@@ -651,7 +651,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 
 **删除：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/OgApbMTbFo0792xCHcBcIkybnfd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/OgApbMTbFo0792xCHcBcIkybnfd.png)
 
 - `removeById`：根据 id 删除
 - `removeByIds`：根据 id 批量删除
@@ -661,7 +661,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 
 **修改：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/FzMMbDtSQoCEySxeWt1c8TcXnGd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/FzMMbDtSQoCEySxeWt1c8TcXnGd.png)
 
 - `updateById`：根据 id 修改
 - `update(Wrapper<T>)`：根据 `UpdateWrapper` 修改，`Wrapper` 中包含 `set` 和 `where` 部分
@@ -670,7 +670,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 
 **Get：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Qszdbc50zoLpuIx4B8ucGnztn7f.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Qszdbc50zoLpuIx4B8ucGnztn7f.png)
 
 - `getById`：根据 id 查询 1 条数据
 - `getOne(Wrapper<T>)`：根据 `Wrapper` 查询 1 条数据
@@ -678,7 +678,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 
 **List：**
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/QhU6b7LWYoKeGCx4aNVcNnIBnVd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/QhU6b7LWYoKeGCx4aNVcNnIBnVd.png)
 
 - `listByIds`：根据 id 批量查询
 - `list(Wrapper<T>)`：根据 Wrapper 条件查询多条数据
@@ -686,7 +686,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 
 **Count**：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/RwrgbZPT0oehzBxpMU2ct6XKnif.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/RwrgbZPT0oehzBxpMU2ct6XKnif.png)
 
 - `count()`：统计所有数量
 - `count(Wrapper<T>)`：统计符合 `Wrapper` 条件的数据数量
@@ -694,7 +694,7 @@ MybatisPlus 不仅提供了 BaseMapper，还提供了通用的 Service 接口及
 **getBaseMapper**：
 当我们在 service 中要调用 Mapper 中自定义 SQL 时，就必须获取 service 对应的 Mapper，就可以通过这个方法：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/LWjsbS1U3oRBuxx1hC0c137Anjh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/LWjsbS1U3oRBuxx1hC0c137Anjh.png)
 
 #### **2.3.2.基本用法**
 
@@ -732,7 +732,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
 项目结构如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/KPXpbd3v8ojYVKxdxERcfpzOnrg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/KPXpbd3v8ojYVKxdxERcfpzOnrg.png)
 
 接下来，我们快速实现下面 4 个接口：
 
@@ -1146,7 +1146,7 @@ private User buildUser(int i) {
 
 执行结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/XDPOb1UkGoDhwqx0ypWc33uDn1d.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/XDPOb1UkGoDhwqx0ypWc33uDn1d.png)
 
 可以看到速度非常慢。
 
@@ -1173,7 +1173,7 @@ void testSaveBatch() {
 
 执行最终耗时如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/KGKabiVucoVjhJxJoASc6biJn9Q.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/KGKabiVucoVjhJxJoASc6biJn9Q.png)
 
 可以看到使用了批处理以后，比逐条新增效率提高了 10 倍左右，性能还是不错的。
 
@@ -1244,13 +1244,13 @@ spring:
 
 再次测试插入 10 万条数据，可以发现速度有非常明显的提升：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/TDHcbkN7Go8f82xzxOIccbqhnAf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/TDHcbkN7Go8f82xzxOIccbqhnAf.png)
 
 在 `ClientPreparedStatement` 的 `executeBatchInternal` 中，有判断 `rewriteBatchedStatements` 值是否为 true 并重写 SQL 的功能：
 
 最终，SQL 被重写了：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/BSMIbdzhqo5TvHxwaB3cOBKdnLe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/BSMIbdzhqo5TvHxwaB3cOBKdnLe.png)
 
 ## 
 
@@ -1266,7 +1266,7 @@ spring:
 
 在 `Idea` 的 plugins 市场中搜索并安装 `MyBatisPlus` 插件：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/V8x1bsS0HoWV7HxEin9coRb9n4e.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/V8x1bsS0HoWV7HxEin9coRb9n4e.png)
 
 然后重启你的 Idea 即可使用。
 
@@ -1275,21 +1275,21 @@ spring:
 刚好数据库中还有一张 address 表尚未生成对应的实体和 mapper 等基础代码。我们利用插件生成一下。
 首先需要配置数据库地址，在 Idea 顶部菜单中，找到 `other`，选择 `Config Database`：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/JKA6bOONLoojUGxiM11cFDtbnsc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/JKA6bOONLoojUGxiM11cFDtbnsc.png)
 
 在弹出的窗口中填写数据库连接的基本信息：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/YkWmbpgUEo5VppxeO84cFgaKn4f.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/YkWmbpgUEo5VppxeO84cFgaKn4f.png)
 
 点击 OK 保存。
 
 然后再次点击 Idea 顶部菜单中的 other，然后选择 `Code Generator`:
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/O4UcbH58LoNOZSxE3Oycrma7n9c.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/O4UcbH58LoNOZSxE3Oycrma7n9c.png)
 
 在弹出的表单中填写信息：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/ZTjzb8HecoO4UjxJJ4ecYGiSnth.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/ZTjzb8HecoO4UjxJJ4ecYGiSnth.png)
 
 最终，代码自动生成到指定的位置了：
 
@@ -1297,7 +1297,7 @@ spring:
 
 有的时候 Service 之间也会相互调用，为了避免出现循环依赖问题，MybatisPlus 提供一个静态工具类：`Db`，其中的一些静态方法与 `IService` 中方法签名基本一致，也可以帮助我们实现 CRUD 功能：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/YAKZbTCuJo3izZxHZw5cR1jdnne.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/YAKZbTCuJo3izZxHZw5cR1jdnne.png)
 
 示例：
 
@@ -1375,7 +1375,7 @@ public class AddressVO{
 
 然后，改造原来的 UserVO，添加一个地址属性：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/R6hLbOZ2RoxqlRxygDTcU9DKnYe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/R6hLbOZ2RoxqlRxygDTcU9DKnYe.png)
 
 接下来，修改 UserController 中根据 id 查询用户的业务接口：
 
@@ -1455,7 +1455,7 @@ alter table address add deleted bit default b'0' null comment '逻辑删除';
 
 然后给 `Address` 实体添加 `deleted` 字段：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/XOlXbd0QyoIJFnxW84Wce6sPn3d.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/XOlXbd0QyoIJFnxW84Wce6sPn3d.png)
 
 接下来，我们要在 `application.yml` 中配置逻辑删除字段：
 
@@ -1481,7 +1481,7 @@ void testDeleteByLogic() {
 
 方法与普通删除一模一样，但是底层的 SQL 逻辑变了：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/TwWibNMIkoPd6yxXf1mcojdjnsb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/TwWibNMIkoPd6yxXf1mcojdjnsb.png)
 
 查询一下试试：
 
@@ -1495,7 +1495,7 @@ void testQuery() {
 
 会发现 id 为 59 的确实没有查询出来，而且 SQL 中也对逻辑删除字段做了判断：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/NhOZbUzX5oqfMhxA3socVJDlnjb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/NhOZbUzX5oqfMhxA3socVJDlnjb.png)
 
 综上， 开启了逻辑删除功能以后，我们就可以像普通删除一样做 CRUD，基本不用考虑代码逻辑问题。还是非常方便的。
 
@@ -1514,7 +1514,7 @@ void testQuery() {
 
 User 类中有一个用户状态字段：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/U3s1bGCPkoLYadxpUbIcITJUnae.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/U3s1bGCPkoLYadxpUbIcITJUnae.png)
 
 像这种字段我们一般会定义一个枚举，做业务判断的时候就可以直接基于枚举做比较。但是我们数据库采用的是 `int` 类型，对应的 PO 也是 `Integer`。因此业务操作时必须手动把 `枚举` 与 `Integer` 转换，非常麻烦。
 
@@ -1524,7 +1524,7 @@ User 类中有一个用户状态字段：
 
 我们定义一个用户状态的枚举：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Z7WKbS5FNoges1xWNBScXkyunJg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Z7WKbS5FNoges1xWNBScXkyunJg.png)
 
 代码如下：
 
@@ -1551,12 +1551,12 @@ public enum UserStatus {
 
 然后把 `User` 类中的 `status` 字段改为 `UserStatus` 类型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Lu1hbFWipofgluxDyD3crjdgndN.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Lu1hbFWipofgluxDyD3crjdgndN.png)
 
 要让 `MybatisPlus` 处理枚举与数据库类型自动转换，我们必须告诉 `MybatisPlus`，枚举中的哪个字段的值作为数据库值。
 `MybatisPlus` 提供了 `@EnumValue` 注解来标记枚举属性：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/RHOybwMOQospeCx9JKkcwJBinbe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/RHOybwMOQospeCx9JKkcwJBinbe.png)
 
 #### **3.3.2.****配置枚举处理器**
 
@@ -1580,25 +1580,25 @@ void testService() {
 
 最终，查询出的 `User` 类的 `status` 字段会是枚举类型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/FBtrbfKFCoH9HzxTd8Qc4XlPnob.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/FBtrbfKFCoH9HzxTd8Qc4XlPnob.png)
 
 同时，为了使页面查询结果也是枚举格式，我们需要修改 UserVO 中的 status 属性：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/IoXkbkoJCoFRiMxf4L5cjPwYnFh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/IoXkbkoJCoFRiMxf4L5cjPwYnFh.png)
 
 并且，在 UserStatus 枚举中通过 `@JsonValue` 注解标记 JSON 序列化时展示的字段：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/C3ZZbfjpmofTCRxkj3Jc2skUnFh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/C3ZZbfjpmofTCRxkj3Jc2skUnFh.png)
 
 最后，在页面查询，结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/Z7vTbMwFWoRAF3xFJE8cJ7kOnXc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/Z7vTbMwFWoRAF3xFJE8cJ7kOnXc.png)
 
 ### **3.4.JSON类型处理器**
 
 数据库的 user 表中有一个 `info` 字段，是 JSON 类型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/QiwhbTqf3oLgKlx4kROckCtknOb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/QiwhbTqf3oLgKlx4kROckCtknOb.png)
 
 格式像这样：
 
@@ -1608,7 +1608,7 @@ void testService() {
 
 而目前 `User` 实体类中却是 `String` 类型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/NFMFb11hEomDfRxntYycTQK1nWb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/NFMFb11hEomDfRxntYycTQK1nWb.png)
 
 这样一来，我们要读取 info 中的属性时就非常不方便。如果要方便获取，info 的类型最好是一个 `Map` 或者实体类。
 
@@ -1622,7 +1622,7 @@ void testService() {
 
 首先，我们定义一个单独实体类来与 info 字段的属性匹配：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/GRkfbTelBo8nbuxYGxrchLHKn1A.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/GRkfbTelBo8nbuxYGxrchLHKn1A.png)
 
 代码如下：
 
@@ -1643,19 +1643,19 @@ public class UserInfo {
 
 接下来，将 User 类的 info 字段修改为 UserInfo 类型，并声明类型处理器：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/ZwkRbhrvnoTOVVx7JiwczpwKnyd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/ZwkRbhrvnoTOVVx7JiwczpwKnyd.png)
 
 测试可以发现，所有数据都正确封装到 UserInfo 当中了：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/WN0FbxJZxoBCUxxB171c02XMnKe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/WN0FbxJZxoBCUxxB171c02XMnKe.png)
 
 同时，为了让页面返回的结果也以对象格式返回，我们要修改 UserVO 中的 info 字段：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/K4yKbNTsfoPq4PxYGXcc8018nQe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/K4yKbNTsfoPq4PxYGXcc8018nQe.png)
 
 此时，在页面查询结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/BVYubrvKZoZhEIx6YjZcXTUbnAe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/BVYubrvKZoZhEIx6YjZcXTUbnAe.png)
 
 ### **3.5.配置加密（选学）**
 
@@ -1721,7 +1721,7 @@ spring:
 
 单元测试的时候不能添加启动参数，所以要在测试类的注解上配置：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/ZSJxbE3CdoByw3xrETvcKRhlnDb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/ZSJxbE3CdoByw3xrETvcKRhlnDb.png)
 
 然后随意运行一个单元测试，可以发现数据库查询正常。
 
@@ -1753,7 +1753,7 @@ MybatisPlus 提供了很多的插件功能，进一步拓展其功能。目前�
 
 在项目中新建一个配置类：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/YZC1bm1cboUb8gxxFpRc1oJznBg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/YZC1bm1cboUb8gxxFpRc1oJznBg.png)
 
 其代码如下：
 
@@ -1801,7 +1801,7 @@ void testPageQuery() {
 
 运行的 SQL 如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/SXXib18G9oNsypxba15cX1fonCd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/SXXib18G9oNsypxba15cX1fonCd.png)
 
 这里用到了分页参数，Page，即可以支持分页参数，也可以支持排序参数。常见的 API 如下：
 
@@ -1860,7 +1860,7 @@ public class UserQuery {
 
 其中缺少的仅仅是分页条件，而分页条件不仅仅用户分页查询需要，以后其它业务也都有分页查询的需求。因此建议将分页查询条件单独定义为一个 `PageQuery` 实体：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/FQmHbfnpXo9CxmxNN99ceLxxnG2.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/FQmHbfnpXo9CxmxNN99ceLxxnG2.png)
 
 `PageQuery` 是前端提交的查询参数，一般包含四个属性：
 
@@ -1911,11 +1911,11 @@ public class UserQuery extends PageQuery {
 
 返回值的用户实体沿用之前定一个 `UserVO` 实体：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/QnGob8eFOo9VZzxQvcec7ipHnAg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/QnGob8eFOo9VZzxQvcec7ipHnAg.png)
 
 最后，则是分页实体 PageDTO:
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/TR51b75RqoUMz8xuOMbclYeAnNd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/TR51b75RqoUMz8xuOMbclYeAnNd.png)
 
 代码如下：
 
@@ -2010,7 +2010,7 @@ public PageDTO<UserVO> queryUsersPage(PageQuery query) {
 
 启动项目，在页面查看：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/TVT7blrJUoFfaRxx8kVckt1Lnoh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/TVT7blrJUoFfaRxx8kVckt1Lnoh.png)
 
 #### **4.2.3.改造 PageQuery 实体**
 
@@ -2190,7 +2190,7 @@ public PageDTO<UserVO> queryUserByPage(PageQuery query) {
 
 最终查询的结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MybatisPlus使用教程_Img/BgcYbcbJNo1LcMxokPYc98arnbg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MybatisPlus使用教程_Img/BgcYbcbJNo1LcMxokPYc98arnbg.png)
 
 **5.作业**
 

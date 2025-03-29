@@ -104,6 +104,30 @@ date: 2024-05-14 20:43:39
 
 
 
+{% markmap 400px %}
+
+  - links
+  - **inline** ~~text~~ *styles*
+  - multiline
+    text
+  - `inline code`
+  - KaTeX - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
+{% endmarkmap %}
+
+```
+  - links
+  - **inline** ~~text~~ *styles*
+  - multiline
+    text
+  - `inline code`
+  - KaTeX - $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+```
+
+
+
+
+
 {% markmap 250px %}
 
 # 思维导图？
@@ -167,7 +191,7 @@ date: 2024-05-14 20:43:39
 
 
 
-```
+  ```
 
 {% markmap 400px %}
 - links
@@ -177,4 +201,4 @@ date: 2024-05-14 20:43:39
 - `inline code`
 {% endmarkmap %}
 
-```
+  ```

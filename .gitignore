@@ -6,7 +6,7 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
-source/**/*.png
-source/**/*.jpg
-source/**/*.jpeg
-source/**/*.gif
+source/_posts/**/*.png
+source/_posts/**/*.jpg
+source/_posts/**/*.jpeg
+source/_posts/**/*.gif

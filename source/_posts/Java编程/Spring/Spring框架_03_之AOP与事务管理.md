@@ -75,7 +75,7 @@ public class BookDaoImpl implements BookDao {
 
 当在App类中从容器中获取bookDao对象后，分别执行其`save`,`delete`,`update`和`select`方法后会有如下的打印结果:
 
-![1630143927489](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630143927489.png)
+![1630143927489](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630143927489.png)
 
 这个时候，我们就应该有些疑问?
 
@@ -88,7 +88,7 @@ public class BookDaoImpl implements BookDao {
 
 说了这么多，Spring到底是如何实现的呢?
 
-![1630144353462](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630144353462.png)
+![1630144353462](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630144353462.png)
 
 (1)前面一直在强调，Spring的AOP是对一个类的方法在不进行任何修改的前提下实现增强。对于上面的案例中BookServiceImpl中有`save`,`update`,`delete`和`select`方法,这些方法我们给起了一个名字叫==连接点==
 
@@ -216,7 +216,7 @@ public class BookDaoImpl implements BookDao {
 
 最终创建好的项目结构如下:
 
-![1630167092142](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630167092142.png)
+![1630167092142](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630167092142.png)
 
 **说明:**
 
@@ -240,7 +240,7 @@ pom.xml
 </dependency>
 ```
 
-![1630146885493](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630146885493.png)
+![1630146885493](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630146885493.png)
 
 * 因为`spring-context`中已经导入了`spring-aop`,所以不需要再单独导入`spring-aop`
 * 导入AspectJ的jar包,AspectJ是AOP思想的一个具体实现，Spring有自己的AOP实现，但是相比于AspectJ来说比较麻烦，所以我们直接采用Spring整合ApsectJ的方式进行AOP开发。
@@ -302,7 +302,7 @@ public class MyAdvice {
 
 绑定切入点与通知关系，并指定通知添加到原始连接点的具体执行==位置==
 
-![1630148447689](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630148447689.png)
+![1630148447689](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630148447689.png)
 
 **说明:**@Before翻译过来是之前，也就是说通知会在切入点方法执行之前执行，除此之前还有其他四种类型，后面会讲。
 
@@ -346,7 +346,7 @@ public class App {
 
 看到在执行update方法之前打印了系统时间戳，说明对原始方法进行了增强，AOP编程成功。
 
-![1630147945888](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630147945888.png)
+![1630147945888](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630147945888.png)
 
 ### 知识点1：@EnableAspectJAutoProxy  
 
@@ -398,7 +398,7 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
 
 #### 流程2:读取所有切面配置中的切入点
 
-![1630151682428](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630151682428.png)
+![1630151682428](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630151682428.png)
 
 * 上面这个例子中有两个切入点的配置，但是第一个`ptx()`并没有被使用，所以不会被读取。
 
@@ -410,7 +410,7 @@ AOP的入门案例已经完成，对于刚才案例的执行过程，我们就�
 
 * 要被实例化bean对象的类中的方法和切入点进行匹配
 
-  ![1630152538083](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630152538083.png)
+  ![1630152538083](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630152538083.png)
 
   * 匹配失败，创建原始对象,如`UserDao`
     * 匹配失败说明不需要增强，直接调用原始对象的方法即可。
@@ -475,7 +475,7 @@ public class MyAdvice {
 
 ##### 步骤3:运行程序
 
-![1630154495165](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630154495165.png)
+![1630154495165](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630154495165.png)
 
 ##### 步骤4:修改MyAdvice类，增强
 
@@ -499,7 +499,7 @@ public class MyAdvice {
 
 ##### 步骤5:运行程序
 
-![1630154625564](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630154625564.png)
+![1630154625564](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630154625564.png)
 
 至此对于刚才的结论，我们就得到了验证，这块大家需要注意的是:
 
@@ -536,7 +536,7 @@ SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，
 
 前面的案例中，有涉及到如下内容:
 
-![1630155937718](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630155937718.png)
+![1630155937718](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630155937718.png)
 
 对于AOP中切入点表达式，我们总共会学习三个内容，分别是`语法格式`、`通配符`和`书写技巧`。
 
@@ -549,7 +549,7 @@ SpringAOP是在不改变原有设计(代码)的前提下对其进行增强的，
 
 对于切入点的描述，我们其实是有两中方式的，先来看下前面的例子
 
-![1630156172790](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630156172790.png)
+![1630156172790](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630156172790.png)
 
 描述方式一：执行com.itheima.dao包下的BookDao接口中的无参数update方法
 
@@ -618,7 +618,7 @@ execution(public User com.itheima.service.UserService.findById(int))
 
 接下来，我们把案例中使用到的切入点表达式来分析下:
 
-![1630163744963](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630163744963.png)
+![1630163744963](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630163744963.png)
 
 ```java
 execution(void com.itheima.dao.BookDao.update())
@@ -669,7 +669,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 前面的案例中，有涉及到如下内容:
 
-![1630164718080](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630164718080.png)
+![1630164718080](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630164718080.png)
 
 它所代表的含义是将`通知`添加到`切入点`方法执行的==前面==。
 
@@ -693,7 +693,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 为了更好的理解这几种通知类型，我们来看一张图
 
-![1630166147697](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630166147697.png)
+![1630166147697](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630166147697.png)
 
 (1)前置通知，追加功能到方法执行前,类似于在代码1或者代码2添加内容
 
@@ -802,7 +802,7 @@ execution(* com.itheima.*.*Service.save*(..))
 
 最终创建好的项目结构如下:
 
-![1630167385146](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630167385146.png)
+![1630167385146](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630167385146.png)
 
 #### 4.2.3 通知类型的使用
 
@@ -825,7 +825,7 @@ public class MyAdvice {
 }
 ```
 
-![1630167805723](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630167805723.png)
+![1630167805723](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630167805723.png)
 
 ##### 后置通知
 
@@ -847,7 +847,7 @@ public class MyAdvice {
 }
 ```
 
-![1630167887131](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630167887131.png)
+![1630167887131](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630167887131.png)
 
 ##### 环绕通知
 
@@ -868,7 +868,7 @@ public class MyAdvice {
 }
 ```
 
-![1630167969051](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630167969051.png)
+![1630167969051](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630167969051.png)
 
 运行结果中，通知的内容打印出来，但是原始方法的内容却没有被执行。
 
@@ -895,11 +895,11 @@ public class MyAdvice {
 
 原因很简单，看下源码就知道了
 
-![1630168248052](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630168248052.png)
+![1630168248052](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630168248052.png)
 
 再次运行，程序可以看到原始方法已经被执行了
 
-![1630168293492](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630168293492.png)
+![1630168293492](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630168293492.png)
 
 ###### 注意事项
 
@@ -1000,7 +1000,7 @@ public class MyAdvice {
 }
 ```
 
-![1630169124446](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630169124446.png)
+![1630169124446](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630169124446.png)
 
 
 
@@ -1025,7 +1025,7 @@ public class MyAdvice {
 }
 ```
 
-![1630169357146](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630169357146.png)
+![1630169357146](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630169357146.png)
 
 **注意：**异常后通知是需要原始方法抛出异常，可以在`select()`方法中添加一行代码`int i = 1/0`即可。如果没有抛异常，异常后通知将不会被执行。
 
@@ -1033,7 +1033,7 @@ public class MyAdvice {
 
 因为环绕通知是可以控制原始方法执行的，所以我们把增强的代码写在调用原始方法的不同位置就可以实现不同的通知类型的功能，如:
 
-![1630170090945](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630170090945.png)
+![1630170090945](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630170090945.png)
 
 ##### 通知类型总结
 
@@ -1311,7 +1311,7 @@ public class MyAdvice {
 
 最终创建好的项目结构如下:
 
-![1630214631112](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630214631112.png)
+![1630214631112](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630214631112.png)
 
 #### 4.3.3 功能开发
 
@@ -1391,7 +1391,7 @@ public class ProjectAdvice {
 
 ##### 步骤5:运行单元测试类
 
-![1630215355776](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630215355776.png)
+![1630215355776](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630215355776.png)
 
 **注意:**因为程序每次执行的时长是不一样的，所以运行多次最终的结果是不一样的。
 
@@ -1432,7 +1432,7 @@ public class ProjectAdvice {
 
 ##### 步骤7:运行单元测试类
 
-![1630215743444](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630215743444.png)
+![1630215743444](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630215743444.png)
 
 
 
@@ -1559,7 +1559,7 @@ public class ProjectAdvice {
 
 最终创建好的项目结构如下:
 
-![1630233154992](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630233154992.png)
+![1630233154992](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630233154992.png)
 
 #### 4.4.2 获取参数
 
@@ -1586,7 +1586,7 @@ public class MyAdvice {
 
 运行App类，可以获取如下内容，说明参数100已经被获取
 
-![1630233291929](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630233291929.png)
+![1630233291929](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630233291929.png)
 
 **思考:方法的参数只有一个，为什么获取的是一个数组?**
 
@@ -1625,7 +1625,7 @@ public class App {
 
 (3)运行App，查看结果,说明两个参数都已经被获取到
 
-![1630233548743](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630233548743.png)
+![1630233548743](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630233548743.png)
 
 **说明:**
 
@@ -1655,13 +1655,13 @@ public class MyAdvice {
 
 运行App后查看运行结果，说明ProceedingJoinPoint也是可以通过getArgs()获取参数
 
-![1630233974310](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630233974310.png)
+![1630233974310](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630233974310.png)
 
 **注意:**
 
 * pjp.proceed()方法是有两个构造方法，分别是:
 
-  ![1630234756123](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630234756123.png)
+  ![1630234756123](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630234756123.png)
 
   * 调用无参数的proceed，当原始方法有参数，会在调用的过程中自动传入参数
 
@@ -1738,7 +1738,7 @@ public class MyAdvice {
 
 (1)参数名的问题
 
-![1630237320870](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630237320870.png)
+![1630237320870](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630237320870.png)
 
 (2)afterReturning方法参数类型的问题
 
@@ -1746,11 +1746,11 @@ public class MyAdvice {
 
 (3)afterReturning方法参数的顺序问题
 
-![1630237586682](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630237586682.png)
+![1630237586682](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630237586682.png)
 
 运行App后查看运行结果，说明返回值已经被获取到
 
-![1630237372286](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630237372286.png)
+![1630237372286](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630237372286.png)
 
 #### 4.4.4 获取异常
 
@@ -1821,11 +1821,11 @@ public class BookDaoImpl implements BookDao {
 
 ==注意:==
 
-![1630239939043](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630239939043.png)
+![1630239939043](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630239939043.png)
 
 运行App后，查看控制台，就能看的异常信息被打印到控制台
 
-![1630239997560](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630239997560.png)
+![1630239997560](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630239997560.png)
 
 
 
@@ -1837,13 +1837,13 @@ public class BookDaoImpl implements BookDao {
 
 需求: 对百度网盘分享链接输入密码时尾部多输入的空格做兼容处理。
 
-![1630240203033](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630240203033.png)
+![1630240203033](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630240203033.png)
 
 问题描述:
 
 * 点击链接，会提示，请输入提取码，如下图所示
 
-  ![1630240528228](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630240528228.png)
+  ![1630240528228](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630240528228.png)
 
 * 当我们从别人发给我们的内容中复制提取码的时候，有时候会多复制到一些空格，直接粘贴到百度的提取码输入框
 
@@ -1946,7 +1946,7 @@ public class BookDaoImpl implements BookDao {
 
 最终创建好的项目结构如下:
 
-![1630241681697](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630241681697.png)
+![1630241681697](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630241681697.png)
 
 现在项目的效果是，当输入密码为"root"控制台打印为true,如果密码改为"root  "控制台打印的是false
 
@@ -2046,7 +2046,7 @@ public class ResourcesDaoImpl implements ResourcesDao {
 
 **注意：**
 
-![1630242491831](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630242491831.png)
+![1630242491831](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630242491831.png)
 
 ## 5，AOP总结
 
@@ -2132,13 +2132,13 @@ AOP的知识就已经讲解完了，接下来对于AOP的知识进行一个总�
 
 Spring为了管理事务，提供了一个平台事务管理器`PlatformTransactionManager`
 
-![1630243651541](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630243651541.png)
+![1630243651541](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630243651541.png)
 
 commit是用来提交事务，rollback是用来回滚事务。
 
 PlatformTransactionManager只是一个接口，Spring还为其提供了一个具体的实现:
 
-![1630243993380](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630243993380.png)
+![1630243993380](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630243993380.png)
 
 从名称上可以看出，我们只需要给它一个DataSource对象，它就可以帮你去在业务层管理事务。其内部采用的是JDBC的事务。所以说如果你持久层采用的是JDBC相关的技术，就可以采用这个事务管理器来管理你的事务。而Mybatis内部采用的就是JDBC的事务，所以后期我们Spring整合Mybatis就采用的这个DataSourceTransactionManager事务管理器。
 
@@ -2376,7 +2376,7 @@ public class AccountServiceTest {
 
 最终创建好的项目结构如下:
 
-![1630247220645](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630247220645.png)
+![1630247220645](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630247220645.png)
 
 #### 6.1.4 事务管理
 
@@ -2528,7 +2528,7 @@ public class SpringConfig {
 
 1. 未开启Spring事务之前:
 
-![1630248794837](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630248794837.png)
+![1630248794837](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630248794837.png)
 
 * AccountDao的outMoney因为是修改操作，会开启一个事务T1
 * AccountDao的inMoney因为是修改操作，会开启一个事务T2
@@ -2539,7 +2539,7 @@ public class SpringConfig {
 
 2. 开启Spring的事务管理后
 
-![1630249111055](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630249111055.png)
+![1630249111055](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630249111055.png)
 
 * transfer上添加了@Transactional注解，在该方法上就会有一个事务T
 * AccountDao的outMoney方法的事务T1加入到transfer的事务T中
@@ -2565,7 +2565,7 @@ public class SpringConfig {
 
 #### 6.3.1 事务配置
 
-![1630250069844](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630250069844.png)
+![1630250069844](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630250069844.png)
 
 上面这些属性都可以在`@Transactional`注解的参数上进行设置。
 
@@ -2758,7 +2758,7 @@ public class AccountServiceImpl implements AccountService {
 
 #### 6.3.3 事务传播行为
 
-![1630253779575](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630253779575.png)
+![1630253779575](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630253779575.png)
 
 对于上述案例的分析:
 
@@ -2794,6 +2794,6 @@ public class LogServiceImpl implements LogService {
 
 ##### 2.事务传播行为的可选值
 
-![1630254257628](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Spring框架_03_之AOP与事务管理_Img/1630254257628.png)
+![1630254257628](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Spring框架_03_之AOP与事务管理_Img/1630254257628.png)
 
 对于我们开发实际中使用的话，因为默认值需要事务是常态的。根据开发过程选择其他的就可以了，例如案例中需要新事务就需要手工配置。其实入账和出账操作上也有事务，采用的就是默认值。

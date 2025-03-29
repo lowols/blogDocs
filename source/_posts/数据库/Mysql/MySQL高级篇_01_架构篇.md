@@ -22,11 +22,11 @@ date: 2024-05-30 13:19:00
 
 那服务器进程对客户端进程发送的请求做了什么处理，才能产生最后的处理结果呢？这里以查询请求为 例展示：
 
-![image-20220615133227202](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615133227202.png)
+![image-20220615133227202](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615133227202.png)
 
 下面具体展开如下：
 
-![image-20220615133420251](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615133420251.png)
+![image-20220615133420251](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615133420251.png)
 
 ### 1.2 Connectors
 
@@ -86,7 +86,7 @@ Connectors, 指的是不同语言中与SQL的交互。MySQL首先是一个网络
 
 MySQL 8.0.25默认支持的存储引擎如下：
 
-![image-20220615140556893](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615140556893.png)
+![image-20220615140556893](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615140556893.png)
 
 ### 1.6 存储层
 
@@ -96,7 +96,7 @@ MySQL 8.0.25默认支持的存储引擎如下：
 
 MySQL架构图本节开篇所示。下面为了熟悉SQL执行流程方便，我们可以简化如下：
 
-![image-20220615140710351](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615140710351.png)
+![image-20220615140710351](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615140710351.png)
 
 简化为三层结构： 
 
@@ -108,7 +108,7 @@ MySQL架构图本节开篇所示。下面为了熟悉SQL执行流程方便，我
 
 ### 2.1 MySQL中的SQL执行流程
 
-![image-20220615141934531](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615141934531.png)
+![image-20220615141934531](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615141934531.png)
 
 MySQL的查询流程：
 
@@ -168,7 +168,7 @@ show status like '%Qcache%';
 
 在解析器中对 SQL 语句进行语法分析、语义分析。
 
-![image-20220615142301226](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615142301226.png)
+![image-20220615142301226](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615142301226.png)
 
 如果没有命中查询缓存，就要开始真正执行语句了。首先，MySQL需要知道你要做什么，因此需要对SQL语句做解析。SQL语句的分析分为词法分析与语法分析。
 
@@ -182,11 +182,11 @@ select department_id,job_id, avg(salary) from employees group by department_id;
 
 如果SQL语句正确，则会生成一个这样的语法树：
 
-![image-20220615162031427](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615162031427.png)
+![image-20220615162031427](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615162031427.png)
 
 下图是SQL分词分析的过程步骤:
 
-![image-20220615163338495](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615163338495.png)
+![image-20220615163338495](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615163338495.png)
 
 至此解析器的工作任务也基本圆满了。
 
@@ -227,7 +227,7 @@ where test1.name='zhangwei' and test2.name='mysql高级课程';
 
 截止到现在，还没有真正去读写真实的表，仅仅只是产出了一个执行计划。于是就进入了执行器阶段 。
 
-![image-20220615162613806](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615162613806.png)
+![image-20220615162613806](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615162613806.png)
 
 在执行之前需要判断该用户是否 `具备权限` 。如果没有，就会返回权限错误。如果具备权限，就执行 SQL 查询并返回结果。在 MySQL8.0 以下的版本，如果设置了查询缓存，这时会将查询结果进行缓存。
 
@@ -247,7 +247,7 @@ select * from test where id=1;
 
 SQL 语句在 MySQL 中的流程是： `SQL语句`→`查询缓存`→`解析器`→`优化器`→`执行器` 。
 
-![image-20220615164722975](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615164722975.png)
+![image-20220615164722975](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615164722975.png)
 
 ### 2.2 MySQL8中SQL执行原理
 
@@ -292,7 +292,7 @@ mysql> show profiles; # 显示最近的几次查询
 mysql> show profile;
 ```
 
-![image-20220615172149919](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615172149919.png)
+![image-20220615172149919](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615172149919.png)
 
 当然你也可以查询指定的 Query ID，比如：
 
@@ -308,7 +308,7 @@ mysql> show profile for query 7;
 mysql> show profile cpu,block io for query 6;
 ```
 
-![image-20220615172409967](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615172409967.png)
+![image-20220615172409967](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615172409967.png)
 
 继续：
 
@@ -316,7 +316,7 @@ mysql> show profile cpu,block io for query 6;
 mysql> show profile cpu,block io for query 7;
 ```
 
-![image-20220615172438338](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615172438338.png)
+![image-20220615172438338](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615172438338.png)
 
 1、除了查看cpu、io阻塞等参数情况，还可以查询下列参数的利用情况。
 
@@ -377,7 +377,7 @@ mysql> select * from locations;
 
 #### 5) 查看profiles
 
-![image-20220615173727345](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615173727345.png)
+![image-20220615173727345](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615173727345.png)
 
 #### 6) 查看profile
 
@@ -387,13 +387,13 @@ mysql> select * from locations;
 mysql> show profile for query 1;
 ```
 
-![image-20220615173803835](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615173803835.png)
+![image-20220615173803835](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615173803835.png)
 
 ```mysql
 mysql> show profile for query 2;
 ```
 
-![image-20220615173822079](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615173822079.png)
+![image-20220615173822079](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615173822079.png)
 
 结论不言而喻。执行编号2时，比执行编号1时少了很多信息，从截图中可以看出查询语句直接从缓存中 获取数据。
 
@@ -417,7 +417,7 @@ mysql> show profile for query 2;
 
 在 InnoDB 存储引擎中有一部分数据会放到内存中，缓冲池则占了这部分内存的大部分，它用来存储各种数据的缓存，如下图所示：
 
-![image-20220615175309751](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615175309751.png)
+![image-20220615175309751](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615175309751.png)
 
 从图中，你能看到 InnoDB 缓冲池包括了数据页、索引页、插入缓冲、锁信息、自适应 Hash 和数据字典信息等。
 
@@ -447,7 +447,7 @@ mysql> show profile for query 2;
 
 缓存在数据库中的结构和作用如下图所示：
 
-![image-20220615193131719](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615193131719.png)
+![image-20220615193131719](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615193131719.png)
 
 **如果我们执行 SQL 语句的时候更新了缓存池中的数据，那么这些数据会马上同步到磁盘上吗？**
 
@@ -513,7 +513,7 @@ Buffer Pool是MySQL内存结构中十分核心的一个组成，你可以先把�
 
 当我们查询数据的时候，会先去 Buffer Pool 中查询。如果 Buffer Pool 中不存在，存储引擎会先将数据从磁盘加载到 Buffer Pool 中，然后将数据返回给客户端；同理，当我们更新某个数据的时候，如果这个数据不存在于 Buffer Pool，同样会先数据加载进来，然后修改内存的数据。被修改的数据会在之后统一刷入磁盘。
 
-![image-20220615222455867](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615222455867.png)
+![image-20220615222455867](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615222455867.png)
 
 
 
@@ -531,7 +531,7 @@ Buffer Pool是MySQL内存结构中十分核心的一个组成，你可以先把�
 show engines;
 ```
 
-![image-20220615223831995](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220615223831995.png)
+![image-20220615223831995](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220615223831995.png)
 
 ## 2. 设置系统默认的存储引擎
 
@@ -657,7 +657,7 @@ mysql> SELECT * FROM test;
 
 创建CSV表还会创建相应的元文件 ，用于 存储表的状态 和 表中存在的行数 。此文件的名称与表的名称相 同，后缀为 CSM 。如图所示
 
-![image-20220616125342599](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220616125342599.png)
+![image-20220616125342599](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220616125342599.png)
 
 如果检查 test.CSV 通过执行上述语句创建的数据库目录中的文件，其内容使用Notepad++打开如下：
 
@@ -668,7 +668,7 @@ mysql> SELECT * FROM test;
 
 这种格式可以被 Microsoft Excel 等电子表格应用程序读取，甚至写入。使用Microsoft Excel打开如图所示
 
-![image-20220616125448555](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220616125448555.png)
+![image-20220616125448555](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220616125448555.png)
 
 ### 4.6 Memory 引擎：置于内存的表
 
@@ -704,9 +704,9 @@ Memory采用的逻辑介质是内存 ，响应速度很快 ，但是当mysqld守
 
 MySQL中同一个数据库，不同的表可以选择不同的存储引擎。如下表对常用存储引擎做出了对比。
 
-![image-20220616125928861](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220616125928861.png)
+![image-20220616125928861](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220616125928861.png)
 
-![image-20220616125945304](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/MySQL高级篇_01_架构篇_Img/image-20220616125945304.png)
+![image-20220616125945304](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/MySQL高级篇_01_架构篇_Img/image-20220616125945304.png)
 
 其实这些东西大家没必要立即就给记住，列出来的目的就是想让大家明白不同的存储引擎支持不同的功能。
 

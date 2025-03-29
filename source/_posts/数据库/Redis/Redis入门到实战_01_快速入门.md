@@ -15,7 +15,7 @@ categories: 后端
 
 小伙伴们理想的课程一定是能够通过讲解的方式，得到如下这些启发，我们的课程会从基础到精通，从redis小白，到redis大牛，还在等什么，这套课程一定就是你最适合你的课程~
 
-![1652882458107](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652882458107.png)
+![1652882458107](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652882458107.png)
 
 
 
@@ -28,27 +28,11 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 其中**键值型**，是指Redis中存储的数据都是以key.value对的形式存储，而value的形式多种多样，可以是字符串.数值.甚至json：
 
-![1652882668159](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652882668159.png)
+![1652882668159](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652882668159.png)
 
 而NoSql则是相对于传统关系型数据库而言，有很大差异的一种数据库。
 
 对于存储的数据，没有类似Mysql那么严格的约束，比如唯一性，是否可以为null等等，所以我们把这种松散结构的数据库，称之为NoSQL数据库。
-
-
-
-## 2.课程目录
-
->- 初始Redis
->    - 认识NoSQL
->    - 认识Redis
->    - 安装Redis
->- Redis常见命令
->    - 5种常见数据结构
->    - 通用命令
->    - 不同数据结构的操作命令
->- Redis的Java客户端
->    - Jedis客户端
->    - SpringDataRedis客户端
 
 
 
@@ -62,7 +46,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/4tUgFo6.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/4tUgFo6.png)
 
 
 
@@ -70,17 +54,17 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 可以是键值型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/GdqOSsj.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/GdqOSsj.png)
 
 也可以是文档型：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/zBBQfcc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/zBBQfcc.png)
 
 
 
 甚至可以是图格式：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/zBnKxWf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/zBnKxWf.png)
 
 
 
@@ -88,7 +72,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 传统数据库的表与表之间往往存在关联，例如外键：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/tXYSl5x.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/tXYSl5x.png)
 
 
 
@@ -125,7 +109,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 而不同的非关系数据库查询语法差异极大，五花八门各种各样。
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/AzaHOTF.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/AzaHOTF.png)
 
 
 
@@ -133,7 +117,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 传统关系型数据库能满足事务ACID的原则。
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/J1MqOJM.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/J1MqOJM.png)
 
 
 
@@ -145,7 +129,7 @@ Redis是一种键值型的NoSql数据库，这里有两个关键字：
 
 除了上述四点以外，在存储方式.扩展性.查询性能上关系型与非关系型也都有着显著差异，总结如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/kZP40dQ.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/kZP40dQ.png)
 
 - 存储方式
   - 关系型数据库基于磁盘进行存储，会有大量的磁盘IO，对性能有一定影响
@@ -168,7 +152,7 @@ Redis诞生于2009年全称是**Re**mote  **D**ictionary **S**erver 远程词典
 - 单线程，每个命令具备原子性
 - 低延迟，速度快（基于内存.IO多路复用.良好的编码）。
 - 支持数据持久化
-- 支持主从集群.分片集群
+- 支持主从集群、分片集群
 - 支持多语言客户端
 
 **作者**：Antirez
@@ -195,11 +179,11 @@ yum install -y gcc tcl
 
 然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/SyjanS5.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/SyjanS5.png)
 
 例如，我放到了/usr/local/src 目录：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/01DTNCf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/01DTNCf.png)
 
 解压缩：
 
@@ -209,7 +193,7 @@ tar -xzf redis-6.2.6.tar.gz
 
 解压后：
 
-![image-20211211080339076](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/8V6zvCD.png)
+![image-20211211080339076](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/8V6zvCD.png)
 
 进入redis目录：
 
@@ -231,7 +215,7 @@ make && make install
 
 默认的安装路径是在 `/usr/local/bin`目录下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/YSxkGm7.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/YSxkGm7.png)
 
 该目录已经默认配置到环境变量，因此可以在任意目录下运行这些命令。其中：
 
@@ -261,7 +245,7 @@ redis-server
 
 如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/v7xWsqC.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/v7xWsqC.png)
 
 这种启动属于`前台启动`，会阻塞整个会话窗口，窗口关闭或者按下`CTRL + C`则Redis停止。不推荐使用。
 
@@ -269,7 +253,7 @@ redis-server
 
 如果要让Redis以`后台`方式启动，则必须修改Redis配置文件，就在我们之前解压的redis安装包下（`/usr/local/src/redis-6.2.6`），名字叫redis.conf：
 
-![image-20211211082225509](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/image-20211211082225509.png)
+![image-20211211082225509](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/image-20211211082225509.png)
 
 我们先将这个配置文件备份一份：
 
@@ -417,7 +401,7 @@ redis-cli [options] [commonds]
 
 不指定commond时，会进入`redis-cli`的交互控制台：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/OYYWPNo.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/OYYWPNo.png)
 
 
 
@@ -437,19 +421,19 @@ GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://g
 
 在课前资料中可以找到Redis的图形化桌面客户端：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/BZ4Agbi.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/BZ4Agbi.png)
 
 解压缩后，运行安装程序即可安装：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/hguGHbX.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/hguGHbX.png)
 
 安装完成后，在安装目录下找到rdm.exe文件：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/hwK5LQ8.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/hwK5LQ8.png)
 
 双击即可运行：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/6hUqslY.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/6hUqslY.png)
 
 
 
@@ -457,19 +441,19 @@ GitHub上的大神编写了Redis的图形化桌面客户端，地址：https://g
 
 点击左上角的`连接到Redis服务器`按钮：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/9qTGyoN.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/9qTGyoN.png)
 
 在弹出的窗口中填写Redis服务信息：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/DshNnKC.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/DshNnKC.png)
 
 点击确定后，在左侧菜单会出现这个链接：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/A2cOm7Q.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/A2cOm7Q.png)
 
 点击即可建立连接了。
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/ja8Fd9s.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/ja8Fd9s.png)
 
 
 
@@ -490,31 +474,31 @@ select 0
 
 Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样：
 
-![1652887393157](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652887393157.png)
+![1652887393157](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652887393157.png)
 
 **贴心小建议：命令不要死记，学会查询就好啦**
 
 Redis为了方便我们学习，将操作不同数据类型的命令也做了分组，在官网（ https://redis.io/commands ）可以查看到不同的命令：
 
-![1652887648826](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652887648826.png)
+![1652887648826](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652887648826.png)
 
 当然我们也可以通过Help命令来帮助我们去查看命令
 
-![1652887748279](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652887748279.png)
+![1652887748279](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652887748279.png)
 
 ### 4.2 Redis 通用命令
 
-通用指令是部分数据类型的，都可以使用的指令，常见的有：
+通用指令是部分数据类型都可以使用的指令，常见的有：
 
 - KEYS：查看符合模板的所有key
+- EXISTS：查看key是否存在
 - DEL：删除一个指定的key
-- EXISTS：判断key是否存在
 - EXPIRE：给一个key设置有效期，有效期到期时该key会被自动删除
 - TTL：查看一个KEY的剩余有效期
 
 通过help [command] 可以查看一个命令的具体用法，例如：
 
-![1652887865189](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652887865189.png)
+![1652887865189](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652887865189.png)
 
 课堂代码如下
 
@@ -567,8 +551,6 @@ OK
 1) "age"	#只剩下一个了
 127.0.0.1:6379>
 ```
-
-**贴心小提示：同学们在拷贝代码的时候，只需要拷贝对应的命令哦~**
 
 * EXISTS
 
@@ -629,7 +611,7 @@ String类型，也就是字符串类型，是Redis中最简单的存储类型。
 * int：整数类型，可以做自增.自减操作
 * float：浮点类型，可以做自增.自减操作
 
-![1652890121291](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652890121291.png)
+![1652890121291](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652890121291.png)
 
 String的常见命令有：
 
@@ -757,7 +739,7 @@ Redis没有类似MySQL中的Table的概念，我们该如何区分不同类型�
 
 Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔开，格式如下：
 
-![1652941631682](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652941631682.png)
+![1652941631682](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652941631682.png)
 
 这个格式并非固定，也可以根据自己的需求来删除或添加词条。
 
@@ -776,7 +758,7 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 
 一旦我们向redis采用这样的方式存储，那么在可视化界面中，redis会以层级结构来进行存储，形成类似于这样的结构，更加方便Redis获取数据
 
-![1652941883537](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652941883537.png)
+![1652941883537](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652941883537.png)
 
 
 
@@ -786,11 +768,11 @@ Hash类型，也叫散列，其value是一个无序字典，类似于Java中的H
 
 String结构是将对象序列化为JSON字符串后存储，当需要修改对象某个字段时很不方便：
 
-![1652941995945](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652941995945.png)
+![1652941995945](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652941995945.png)
 
 Hash结构可以将对象中的每个字段独立存储，可以针对单个字段做CRUD：
 
-![1652942027719](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652942027719.png)
+![1652942027719](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652942027719.png)
 
 **Hash类型的常见命令**
 
@@ -907,7 +889,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 * 插入和删除快
 * 查询速度一般
 
-常用来存储一个有序数据，例如：朋友圈点赞列表，评论列表等。
+常用来存储需要**元素添加顺序**的数据，例如：朋友圈点赞列表，评论列表等。
 
 **List的常见命令有：**
 
@@ -918,7 +900,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - LRANGE key star end：返回一段角标范围内的所有元素
 - BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil
 
-![1652943604992](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652943604992.png)
+![1652943604992](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652943604992.png)
 
 * LPUSH和RPUSH
 
@@ -972,13 +954,13 @@ Redis的Set结构与Java中的HashSet类似，可以看做是一个value为null�
 
 例如两个集合：s1和s2:
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/ha8x86R.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/ha8x86R.png)
 
 求交集：SINTER s1 s2
 
 求s1与s2的不同：SDIFF s1 s2
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/L9vTv2X.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/L9vTv2X.png)
 
 
 
@@ -1096,11 +1078,11 @@ SortedSet的常见命令有：
 
 在Redis官网中提供了各种语言的客户端，地址：https://redis.io/docs/clients/
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/9f68ivq.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/9f68ivq.png)
 
 其中Java客户端也包含很多：
 
-![image-20220609102817435](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/image-20220609102817435.png)
+![image-20220609102817435](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/image-20220609102817435.png)
 
 标记为❤的就是推荐使用的java客户端，包括：
 
@@ -1117,7 +1099,7 @@ SortedSet的常见命令有：
 
 0）创建工程：
 
-![1652959138501](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652959138501.png)
+![1652959138501](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652959138501.png)
 
 
 
@@ -1293,7 +1275,7 @@ SpringData是Spring中数据操作的模块，包含对各种数据库的集成�
 
 SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redis的操作。并且将不同数据类型的操作API封装到了不同的类型中：
 
-![1652976773295](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1652976773295.png)
+![1652976773295](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1652976773295.png)
 
 
 
@@ -1406,7 +1388,11 @@ class RedisDemoApplicationTests {
 }
 ```
 
-**贴心小提示：SpringDataJpa使用起来非常简单，记住如下几个步骤即可**
+可以看到成功存储和读取了
+
+![image-20241102110636854](Redis入门到实战_01_快速入门_Img/image-20241102110636854.png)
+
+**贴心小提示：SpringDataRedis使用起来非常简单，记住如下几个步骤即可**
 
 SpringDataRedis的使用步骤：
 
@@ -1414,30 +1400,31 @@ SpringDataRedis的使用步骤：
 * 在application.yml配置Redis信息
 * 注入RedisTemplate
 
-
-
 ### 6.2 .数据序列化器
+
+通过前面章节的命令行练习Redis常用命令，我们知道，Redis的命令只能接收字符串参数。
+
+RedisTemplate底层是如何把我们的Java对象转换成Redis认识的字符串参数呢？
 
 RedisTemplate可以接收任意Object作为值写入Redis：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/OEMcbuu.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/OEMcbuu.png)
 
 
 
-只不过写入前会把Object序列化为字节形式，默认是采用JDK序列化，得到的结果是这样的：
+RedisTemplate默认采用JDK的序列化器，会做如下操作
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/5FjtWk5.png)
+- 先把Java对象序列化为字节数组，
+- 再生成代表这些字节数组的16进制字符串，
 
+然后保存到Redis。最后保存在Redis的数据这样的：上一节我们传入的“name”和“虎哥”参数，在Redis中是很长的16进制字符串，我们的键值都变大了很多。
 
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/5FjtWk5.png)
 
-缺点：
+使用JDK序列化的缺点：
 
 - 可读性差
 - 内存占用较大
-
-
-
-
 
 我们可以自定义RedisTemplate的序列化方式，代码如下：
 
@@ -1470,11 +1457,9 @@ public class RedisConfig {
 
 这里采用了JSON序列化来代替默认的JDK序列化方式。最终结果如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/XOAq3cN.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/XOAq3cN.png)
 
 整体可读性有了很大提升，并且能将Java对象自动的序列化为JSON字符串，并且查询时能自动把JSON反序列化为Java对象。不过，其中记录了序列化时对应的class名称，目的是为了查询时实现自动反序列化。这会带来额外的内存开销。
-
-
 
 
 
@@ -1482,17 +1467,17 @@ public class RedisConfig {
 
 尽管JSON的序列化方式可以满足我们的需求，但依然存在一些问题，如图：
 
-![1653054602930](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1653054602930.png)
+![1653054602930](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1653054602930.png)
 
-为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销。
+为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销。而且如果后续类的包名发生变化，反序列化会失败。
 
 为了减少内存的消耗，我们可以采用手动序列化的方式，换句话说，就是不借助默认的序列化器，而是我们自己来控制序列化的动作，同时，我们只采用String的序列化器，这样，在存储value时，我们就不需要在内存中就不用多存储数据，从而节约我们的内存空间
 
-![1653054744832](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1653054744832.png)
+![1653054744832](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1653054744832.png)
 
 这种用法比较普遍，因此SpringDataRedis就提供了RedisTemplate的子类：StringRedisTemplate，它的key和value的序列化方式默认就是String方式。
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/zXH6Qn6.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/zXH6Qn6.png)
 
 
 
@@ -1537,13 +1522,13 @@ class RedisStringTests {
 
 此时我们再来看一看存储的数据，小伙伴们就会发现那个class数据已经不在了，节约了我们的空间~
 
-![1653054945211](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/Redis入门到实战_01_快速入门_Img/1653054945211.png)
+![1653054945211](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/Redis入门到实战_01_快速入门_Img/1653054945211.png)
 
 最后小总结：
 
 RedisTemplate的两种序列化实践方案：
 
-* 方案一：
+* 方案一：【不推荐，如果后续类名或包名发生变化，无法反序列化】
   * 自定义RedisTemplate
   * 修改RedisTemplate的序列化器为GenericJackson2JsonRedisSerializer
 
@@ -1565,7 +1550,6 @@ class RedisStringTests {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
-
 
     @Test
     void testHash() {

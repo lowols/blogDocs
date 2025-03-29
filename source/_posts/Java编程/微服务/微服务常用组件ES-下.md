@@ -17,8 +17,8 @@ categories: 后端
 
 Elasticsearch 的查询可以分为两大类：
 
-- **叶子查询（Leaf ****query**** clauses）**：一般是在特定的字段里查询特定值，属于简单查询，很少单独使用。
-- **复合查询（Compound ****query**** clauses）**：以逻辑方式组合多个叶子查询或者更改叶子查询的行为方式。
+- **叶子查询（Leaf queryclauses）**：一般是在特定的字段里查询特定值，属于简单查询，很少单独使用。
+- **复合查询（Compound query clauses）**：以逻辑方式组合多个叶子查询或者更改叶子查询的行为方式。
 
 ### 1.1.快速入门
 
@@ -56,7 +56,7 @@ GET /items/_search
 
 执行结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/IFNub8Zn6oNqb2xciZScRkk4nsd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/IFNub8Zn6oNqb2xciZScRkk4nsd.png)
 
 你会发现虽然是 match_all，但是响应结果中并不会包含索引库中的所有文档，而是仅有 10 条。这是因为处于安全考虑，elasticsearch 设置了默认的查询页数。
 
@@ -66,7 +66,7 @@ GET /items/_search
 
 如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/DgiabobteoKwNIxLChHcZyvdnQb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/DgiabobteoKwNIxLChHcZyvdnQb.png)
 
 这里列举一些常见的，例如：
 
@@ -104,7 +104,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Dp30bjD77oO5U5xCjowcsLaqnse.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Dp30bjD77oO5U5xCjowcsLaqnse.png)
 
 与 `match` 类似的还有 `multi_match`，区别在于可以同时对多个字段搜索，而且多个字段都要满足，语法示例：
 
@@ -122,7 +122,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Dt2dbDLaDoK3HZxyLdGc8OGUnZe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Dt2dbDLaDoK3HZxyLdGc8OGUnZe.png)
 
 #### 1.2.2.精确查询
 
@@ -155,11 +155,11 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/WUUibThF1oiPkkxRQ8lcfHjEnbg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/WUUibThF1oiPkkxRQ8lcfHjEnbg.png)
 
 当你输入的搜索条件不是词条，而是短语时，由于不做分词，你反而搜索不到：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/BlQTbUnvGoBRU1xVFSXcyEManCh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/BlQTbUnvGoBRU1xVFSXcyEManCh.png)
 
 再来看下 `range` 查询，语法如下：
 
@@ -186,7 +186,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/RQeTbGbTvoIsrAxhj5ccTSG5nye.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/RQeTbGbTvoIsrAxhj5ccTSG5nye.png)
 
 ### 1.3.复合查询
 
@@ -208,19 +208,19 @@ GET /{索引库名}/_search
 
 例如，我们搜索 "手机"，结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/OmBkbJlkzotHRXxEWINcrDJqnhe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/OmBkbJlkzotHRXxEWINcrDJqnhe.png)
 
 从 elasticsearch5.1 开始，采用的相关性打分算法是 BM25 算法，公式如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/GxE2b7cgvoMmk5xnbyScVB2NnDf.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/GxE2b7cgvoMmk5xnbyScVB2NnDf.png)
 
 基于这套公式，就可以判断出某个文档与用户搜索的关键字之间的关联度，还是比较准确的。但是，在实际业务需求中，常常会有竞价排名的功能。不是相关度越高排名越靠前，而是掏的钱多的排名靠前。
 
 例如在百度中搜索 Java 培训，排名靠前的就是广告推广：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/BlC2bhAZZoLR9jxBToKc9uP7nqh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/BlC2bhAZZoLR9jxBToKc9uP7nqh.png)
 
-要想认为控制相关性算分，就需要利用 elasticsearch 中的 function score 查询了。
+要想人为控制相关性算分，就需要利用 elasticsearch 中的 function score 查询了。
 
 **基本语法**：
 
@@ -229,7 +229,6 @@ function score 查询中包含四部分内容：
 - **原始查询**条件：query 部分，基于这个条件搜索文档，并且基于 BM25 算法给文档打分，**原始算分**（query score)
 - **过滤条件**：filter 部分，符合该条件的文档才会重新算分
 - **算分函数**：符合 filter 条件的文档要根据这个函数做运算，得到的**函数算分**（function score），有四种函数
-
   - weight：函数结果是常量
   - field_value_factor：以文档中的某个字段值作为函数结果
   - random_score：以随机数作为函数结果
@@ -321,7 +320,7 @@ GET /items/_search
 
 例如黑马商城的搜索页面：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/HctPb4AUWofhUzx4P4McavP0nAc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/HctPb4AUWofhUzx4P4McavP0nAc.png)
 
 其中输入框的搜索条件肯定要参与相关性算分，可以采用 match。但是价格范围过滤、品牌过滤、分类过滤等尽量采用 filter，不要参与相关性算分。
 
@@ -399,7 +398,7 @@ elasticsearch 中通过修改 `from`、`size` 参数来控制要返回的分页�
 
 类似于 mysql 中的 `limit ?, ?`
 
-官方文档如下：
+官方文档如下：https://www.elastic.co/guide/en/elasticsearch/reference/7.12/paginate-search-results.html
 
 语法如下：
 
@@ -448,7 +447,7 @@ GET /items/_search
 
 如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/VtAcboF7XorwxQxQGcecUKannZb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/VtAcboF7XorwxQxQGcecUKannZb.png)
 
 试想一下，假如我们现在要查询的是第 999 页数据呢，是不是要找第 9990~10000 的数据，那岂不是需要把每个分片中的前 10000 名数据都查询出来，汇总在一起，在内存中排序？如果查询的分页深度更深呢，需要一次检索的数据岂不是更多？
 
@@ -461,7 +460,13 @@ GET /items/_search
 - `search after`：分页时需要排序，原理是从上一次的排序值开始，查询下一页数据。官方推荐使用的方式。
 - `scroll`：原理将排序后的文档 id 形成快照，保存下来，基于快照做分页。官方已经不推荐使用。
 
-详情见文档：
+详情见文档：https://www.elastic.co/guide/en/elasticsearch/reference/7.12/paginate-search-results.html
+
+**总结：**
+
+大多数情况下，我们采用普通分页就可以了。查看百度、京东等网站，会发现其分页都有限制。例如百度最多支持77页，每页不足20条。京东最多100页，每页最多60条。
+
+因此，一般我们采用限制分页深度的方式即可，无需实现深度分页。
 
 ### 1.6.高亮
 
@@ -471,7 +476,7 @@ GET /items/_search
 
 我们在百度，京东搜索时，关键字会变成红色，比较醒目，这叫高亮显示：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/ZIBlbmXcXo3NDmxF8NdctC1Xnac.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/ZIBlbmXcXo3NDmxF8NdctC1Xnac.png)
 
 观察页面源码，你会发现两件事情：
 
@@ -515,7 +520,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/LOWmbxxZ5ojScsxEFTSctz4pnDd.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/LOWmbxxZ5ojScsxEFTSctz4pnDd.png)
 
 ### 1.7.总结
 
@@ -528,7 +533,7 @@ GET /{索引库名}/_search
 
 示例：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/VJEobeRpBozcyGx1UqFcFhwrngl.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/VJEobeRpBozcyGx1UqFcFhwrngl.png)
 
 ## 2.RestClient 查询
 
@@ -549,7 +554,7 @@ GET /{索引库名}/_search
 
 首先以 `match_all` 查询为例，其 DSL 和 JavaAPI 的对比如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/R4Gsbi2mko4PHixgIgucki3Vn6R.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/R4Gsbi2mko4PHixgIgucki3Vn6R.png)
 
 代码解读：
 
@@ -561,11 +566,11 @@ GET /{索引库名}/_search
 
 这里关键的 API 有两个，一个是 `request.source()`，它构建的就是 DSL 中的完整 JSON 参数。其中包含了 `query`、`sort`、`from`、`size`、`highlight` 等所有功能：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/FVtobCskqobCdgxKtkYcpYDnnQg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/FVtobCskqobCdgxKtkYcpYDnnQg.png)
 
 另一个是 `QueryBuilders`，其中包含了我们学习过的各种**叶子查询**、**复合查询**等：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/VzBwbA6PToT0NvxUDGLcunqun3g.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/VzBwbA6PToT0NvxUDGLcunqun3g.png)
 
 #### 2.1.2.解析响应结果
 
@@ -599,7 +604,7 @@ GET /{索引库名}/_search
 
 因此，我们解析 `SearchResponse` 的代码就是在解析这个 JSON 结果，对比如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/XoNXbPdAAo04rEx0DnmcQxM2nse.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/XoNXbPdAAo04rEx0DnmcQxM2nse.png)
 
 **代码解读**：
 
@@ -734,7 +739,7 @@ void testTerm() throws IOException {
 
 复合查询也是由 `QueryBuilders` 来构建，我们以 `bool` 查询为例，DSL 和 JavaAPI 的对比如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/O5HxbOcZpowtCyxrFyQcl520nne.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/O5HxbOcZpowtCyxrFyQcl520nne.png)
 
 完整代码如下：
 
@@ -764,7 +769,7 @@ void testBool() throws IOException {
 
 之前说过，`requeset.source()` 就是整个请求 JSON 参数，所以排序、分页都是基于这个来设置，其 DSL 和 JavaAPI 的对比如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Ix3EbJ8x8oiZC1xa6xwcMoZIn4d.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Ix3EbJ8x8oiZC1xa6xwcMoZIn4d.png)
 
 完整示例代码：
 
@@ -798,7 +803,7 @@ void testPageAndSort() throws IOException {
 
 首先来看高亮条件构造，其 DSL 和 JavaAPI 的对比如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/FE45bv7PUoUEKxxh0JXcMlawnDg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/FE45bv7PUoUEKxxh0JXcMlawnDg.png)
 
 示例代码如下：
 
@@ -826,7 +831,7 @@ void testHighlight() throws IOException {
 
 再来看结果解析，文档解析的部分不变，主要是高亮内容需要单独解析出来，其 DSL 和 JavaAPI 的对比如图：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/PG6PbI9KpoWaYDxm1Yfcba1nnLc.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/PG6PbI9KpoWaYDxm1Yfcba1nnLc.png)
 
 代码解读：
 
@@ -877,21 +882,19 @@ private void handleResponse(SearchResponse response) {
 
 实现这些统计功能的比数据库的 sql 要方便的多，而且查询速度非常快，可以实现近实时搜索效果。
 
-官方文档：
+官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/7.12/search-aggregations.html
 
 聚合常见的有三类：
 
-- **桶（****Bucket****）**聚合：用来对文档做分组
-
+- **桶（Bucket）**聚合：用来对文档做分组
   - `TermAggregation`：按照文档字段值分组，例如按照品牌值分组、按照国家分组
   - `Date Histogram`：按照日期阶梯分组，例如一周为一组，或者一月为一组
-- **度量（****Metric****）**聚合：用以计算一些值，比如：最大值、最小值、平均值等
-
+- **度量（Metric）**聚合：用以计算一些值，比如：最大值、最小值、平均值等
   - `Avg`：求平均值
   - `Max`：求最大值
   - `Min`：求最小值
   - `Stats`：同时求 `max`、`min`、`avg`、`sum` 等
-- **管道（****pipeline****）**聚合：其它聚合的结果为基础做进一步运算
+- **管道（pipeline）**聚合：以其它聚合的结果为基础做进一步运算
 
 **注意：**参加聚合的字段必须是 keyword、日期、数值、布尔类型
 
@@ -901,7 +904,7 @@ private void handleResponse(SearchResponse response) {
 
 #### 3.1.1.Bucket 聚合
 
-例如我们要统计所有商品中共有哪些商品分类，其实就是以分类（category）字段对数据分组。category 值一样的放在同一组，属于 `Bucket` 聚合中的 `Term` 聚合。
+例如，我们要统计所有商品中共有哪些商品分类，其实就是以分类（category）字段对数据分组。category 值一样的放在同一组，属于 `Bucket` 聚合中的 `Term` 聚合。
 
 基本语法如下：
 
@@ -932,13 +935,13 @@ GET /items/_search
 
 来看下查询的结果：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/QlUSbzBdEogKarxFuYSc1uqvnhb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/QlUSbzBdEogKarxFuYSc1uqvnhb.png)
 
 #### 3.1.2.带条件聚合
 
 默认情况下，Bucket 聚合是对索引库的所有文档做聚合，例如我们统计商品中所有的品牌，结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/AsFtbYzHPozBAnx1UjLcmCAun1f.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/AsFtbYzHPozBAnx1UjLcmCAun1f.png)
 
 可以看到统计出的品牌非常多。
 
@@ -1088,11 +1091,11 @@ GET /items/_search
 
 结果如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Cm0qb1YisoM8cMxlPAKcUKiYnje.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Cm0qb1YisoM8cMxlPAKcUKiYnje.png)
 
 另外，我们还可以让聚合按照每个品牌的价格平均值排序：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/PL9gbErQ1o4naaxL02Kc4gD6nvh.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/PL9gbErQ1o4naaxL02Kc4gD6nvh.png)
 
 #### 3.1.4.总结
 
@@ -1118,11 +1121,11 @@ aggs 代表聚合，与 query 同级，此时 query 的作用是？
 
 不过聚合条件的要利用 `AggregationBuilders` 这个工具类来构造。DSL 与 JavaAPI 的语法对比如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/ZwsYbcoLMo9KF0xE8P0cAGBDnJb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/ZwsYbcoLMo9KF0xE8P0cAGBDnJb.png)
 
 聚合结果与搜索文档同一级别，因此需要单独获取和解析。具体解析语法如下：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/QNZ1bhwwNo0rG9xYzqQcf86VnCg.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/QNZ1bhwwNo0rG9xYzqQcf86VnCg.png)
 
 完整代码如下：
 
@@ -1171,7 +1174,7 @@ Elasticsearch 的基本语法我们已经学完，足以应对大多数搜索业
 
 在黑马商城的搜索页面，输入关键字，点击搜索时，会发现前端会发起查询商品的请求：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Vv2ObuV8eoU7tax2s1BcZREynPe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Vv2ObuV8eoU7tax2s1BcZREynPe.png)
 
 请求的接口信息如下：
 
@@ -1191,13 +1194,13 @@ Elasticsearch 的基本语法我们已经学完，足以应对大多数搜索业
 
 请求参数可以参考原本 `item-service` 中 `com.hmall.item.controller.SearchController` 类中的基于数据库查询的接口：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/WM7qbTDgroGmLJxjP5kc5qKpnC2.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/WM7qbTDgroGmLJxjP5kc5qKpnC2.png)
 
 ### 4.2.过滤条件聚合
 
 搜索页面的过滤项目前是写死的：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/AFLQb6JXToDmggxYtimcrfxsnac.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/AFLQb6JXToDmggxYtimcrfxsnac.png)
 
 但是大家思考一下，随着搜索条件的变化，过滤条件展示的过滤项是不是应该跟着变化。
 
@@ -1209,11 +1212,11 @@ Elasticsearch 的基本语法我们已经学完，足以应对大多数搜索业
 
 事实上，搜索时，前端已经发出了请求，尝试搜索栏中除价格以外的过滤项：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/G0FHbAsK1omuI6x2U0icj4TQnSe.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/G0FHbAsK1omuI6x2U0icj4TQnSe.png)
 
 由于采用的是 POST 请求，所以参数在请求体中：
 
-![](http://cdn.jsdelivr.net/gh/lowols/Pictures@main/微服务常用组件ES-下_Img/Wqg1bYlvUogOOwx9l0tce8I8nbb.png)
+![](http://fastly.jsdelivr.net/gh/lowols/Pictures@main/posts/微服务常用组件ES-下_Img/Wqg1bYlvUogOOwx9l0tce8I8nbb.png)
 
 接口信息如下：
 
